@@ -49,7 +49,7 @@ const HomePage = () => {
       <Head>
         <title>Fatih dan Tirta - Wedding Invitation</title>
       </Head>
-      <AutoplayAudio />
+      {/* <AutoplayAudio /> */}
       <motion.div
         style={{
           position: 'absolute',
