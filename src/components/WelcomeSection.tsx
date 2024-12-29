@@ -20,7 +20,13 @@ const WelcomeSection = () => {
           height={1926}
         />
         <Box className="absolute w-full h-[318px]">
-          <Image className="absolute w-[673px] h-[1068px]" src={'/images/mountain.webp'} alt="union-venue" width={461} height={601} />
+          <Image
+            className="absolute w-[673px] h-[1068px]"
+            src={'/images/mountain.webp'}
+            alt="union-venue"
+            width={461}
+            height={601}
+          />
         </Box>
       </Center>
     </React.Fragment>

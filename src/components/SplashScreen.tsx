@@ -35,7 +35,13 @@ const SplashScreen = () => {
 
   return (
     <Box className="fixed z-30" w={'100vw'} h={'100vh'} bg={'#e5f6f3'}>
-      <Image className="fixed !w-[1920px] !h-[1280px] opacity-30" src={'/images/bg.webp'} alt="bg" width={2268} height={1071} />
+      <Image
+        className="fixed !w-[1920px] !h-[1280px] opacity-30"
+        src={'/images/bg.webp'}
+        alt="bg"
+        width={2268}
+        height={1071}
+      />
       {/* flower-2 */}
       <motion.div
         className="absolute top-[70px] -left-[60px] w-[172px] h-[255px] z-10"

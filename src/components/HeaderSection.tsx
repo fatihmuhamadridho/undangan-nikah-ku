@@ -4,10 +4,11 @@ import React from 'react';
 import PalmImage from './Images/PalmImage';
 import PineImage from './Images/PineImage';
 import Flower1Image from './Images/Flower1Image';
-import { Variants } from 'motion/react';
+import { Variants, motion } from 'motion/react';
 
 const HeaderSection = () => {
-  const BACKGROUND_IMAGE = process.env.NODE_ENV === 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
+  const BACKGROUND_IMAGE =
+    process.env.NODE_ENV === 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
   const rotateAnimation: Variants = {
     animate: {
       rotate: [0, 1, 5, 10, 15, 20, 15, 10, 5, 1, 0],
@@ -26,16 +27,14 @@ const HeaderSection = () => {
       <PineImage className="absolute -bottom-[20px] -right-[100px] w-[272px] h-[421px]" />
       <PalmImage className="absolute -bottom-[350px] w-[272px] h-[582px]" />
       <PalmImage className="absolute -bottom-[350px] right-0 w-[272px] h-[582px]" />
-      <Flower1Image
-        position="absolute"
-        width={209}
-        height={292}
-        bottom={0}
-        left={-60}
+      <motion.div
+        className="absolute -bottom-[150px] right-[70px] -rotate-[45deg] w-[216px] h-[301px] z-20"
+        style={{ transformOrigin: 'bottom center' }}
         variants={rotateAnimation}
-        animate={'animate'}
-        transformOrigin="bottom center"
-      />
+        animate="animate"
+      >
+        <Flower1Image />
+      </motion.div>
     </BackgroundImage>
   );
 };

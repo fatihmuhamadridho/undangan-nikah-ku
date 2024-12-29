@@ -17,7 +17,13 @@ const OpenInvitationSection = (props: OpenInvitationSectionProps) => {
       w={504}
       h={293}
     >
-      <Image className="absolute w-[706px] h-[293px]" src={'/images/mountain.webp'} alt="mountain" width={461} height={601} />
+      <Image
+        className="absolute w-[706px] h-[293px]"
+        src={'/images/mountain.webp'}
+        alt="mountain"
+        width={461}
+        height={601}
+      />
       <UnstyledButton
         className="absolute flex items-center justify-center !text-white gap-1 rounded-full z-20 active:translate-y-[1px]"
         px={16}

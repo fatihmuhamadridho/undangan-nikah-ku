@@ -1,24 +1,27 @@
 import Image from 'next/image';
 import React from 'react';
 
-interface Flower2ImageProps {
+interface ImagesProps {
   className?: string;
-  width?: number | string;
-  height?: number | string;
-  top?: number | string;
-  right?: number | string;
-  bottom?: number | string;
-  left?: number | string;
+  flip?: 'horizontal' | 'vertical';
 }
 
-const Flower2Image = (props: Flower2ImageProps) => {
-  const { className, width, height, top, right, bottom, left } = props;
+const Flower2Image = (props: ImagesProps) => {
+  const { flip } = props;
+
+  const useClassName = (): string => {
+    let className = '';
+    if (flip === 'horizontal') {
+      className = className + ' -scale-x-100';
+    }
+    return className;
+  };
+
   return (
     <Image
-      className={className}
-      style={{ width, height, top, right, bottom, left }}
+      className={useClassName()}
       src={'/images/flower-2.webp'}
-      alt="flower-left"
+      alt="flower-2"
       width={378}
       height={558}
       draggable={false}

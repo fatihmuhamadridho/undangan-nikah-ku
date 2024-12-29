@@ -1,5 +1,5 @@
 import ApologySection from '@/components/ApologySection';
-import AutoplayAudio from '@/components/AutoplayAudio';
+// import AutoplayAudio from '@/components/AutoplayAudio';
 import CoupleSection from '@/components/CoupleSection';
 import DressCodeSection from '@/components/DressCodeSection';
 import FooterSection from '@/components/FooterSection';
