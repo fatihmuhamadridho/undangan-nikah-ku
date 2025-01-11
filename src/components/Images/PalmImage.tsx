@@ -1,25 +1,16 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 interface ImagesProps {
-  className?: string;
-  flip?: 'horizontal' | 'vertical';
+  style?: CSSProperties;
 }
 
 const PalmImage = (props: ImagesProps) => {
-  const { flip } = props;
-
-  const useClassName = (): string => {
-    let className = '';
-    if (flip === 'horizontal') {
-      className = className + ' -scale-x-100';
-    }
-    return className;
-  };
+  const { style } = props;
 
   return (
     <Image
-      className={useClassName()}
+      style={style}
       src={'/images/palm.webp'}
       alt="palm"
       width={525}
