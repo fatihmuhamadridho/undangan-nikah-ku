@@ -2,14 +2,16 @@ import Image from 'next/image';
 import React, { CSSProperties } from 'react';
 
 interface ImagesProps {
+  className?: string;
   style?: CSSProperties;
 }
 
 const BranchImage = (props: ImagesProps) => {
-  const { style } = props;
+  const { className, style } = props;
 
   return (
     <Image
+      className={className}
       style={style}
       src={'/images/branch.webp'}
       alt="branch"

@@ -47,9 +47,9 @@ const OpenInvitationSection = (props: OpenInvitationSectionProps) => {
             gap={16}
           >
             <Text>We invite you to The Wedding of</Text>
-            <Text fz={46}>Vidi & Hening</Text>
+            <Text fz={46}>Fatih & Tirta</Text>
             <UnstyledButton
-              className="flex items-center justify-center gap-3 rounded-[50px]"
+              className="flex items-center justify-center gap-1 rounded-[50px]"
               px={32}
               py={11}
               bg={'#4B5B40'}

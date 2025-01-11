@@ -182,7 +182,7 @@ const SplashScreen = () => {
         fw={700}
         c={'#e9088a'}
       >
-        TIRTA & FATIH
+        FATIH & TIRTA
       </Text>
     </Box>
   );
