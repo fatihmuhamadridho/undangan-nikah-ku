@@ -7,6 +7,7 @@ import HeaderSection from '@/components/HeaderSection';
 import OpenInvitationSection from '@/components/OpenInvitationSection';
 import SplashScreen from '@/components/SplashScreen';
 import WelcomeSection from '@/components/WelcomeSection';
+import SaveDateSection from '@/components/SaveDateSection';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -68,6 +69,7 @@ const HomePage = () => {
         <HeaderSection />
         <ScrollArea ml={'auto'} w={{ xs: '100%', md: '39%' }}>
           <WelcomeSection />
+          <SaveDateSection />
         </ScrollArea>
         <FooterSection />
       </motion.div>
