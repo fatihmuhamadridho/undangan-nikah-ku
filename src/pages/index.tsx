@@ -1,12 +1,12 @@
+import { ScrollArea } from '@mantine/core';
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import Head from 'next/head';
 import FooterSection from '@/components/FooterSection';
 import HeaderSection from '@/components/HeaderSection';
 import OpenInvitationSection from '@/components/OpenInvitationSection';
 import SplashScreen from '@/components/SplashScreen';
 import WelcomeSection from '@/components/WelcomeSection';
-import { ScrollArea } from '@mantine/core';
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import Head from 'next/head';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -66,7 +66,7 @@ const HomePage = () => {
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
         <HeaderSection />
-        <ScrollArea left={{ xs: '0%', md: '60%' }} w={{ xs: '100%', md: '39%' }} mih={'200vh'}>
+        <ScrollArea ml={'auto'} w={{ xs: '100%', md: '39%' }}>
           <WelcomeSection />
         </ScrollArea>
         <FooterSection />
