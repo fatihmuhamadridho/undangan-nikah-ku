@@ -15,7 +15,7 @@ import Flower4Image from './Images/Flower4Image';
 
 const WelcomeSection = () => {
   return (
-    <Box>
+    <Box className="relative overflow-hidden">
       <Box className="absolute inset-0">
         <Box
           className="absolute bottom-0 left-1/2 w-[120%]"

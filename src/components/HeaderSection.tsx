@@ -11,7 +11,7 @@ import PalmImage from './Images/PalmImage';
 
 const HeaderSection = () => {
   const BACKGROUND_IMAGE =
-    process.env.NODE_ENV !== 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
+    process.env.NODE_ENV === 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
 
   return (
     <Box className="fixed inset-0 block overflow-hidden" w={'61%'} h={'100vh'} visibleFrom="md">
