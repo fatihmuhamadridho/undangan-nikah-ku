@@ -1,26 +1,12 @@
-import ApologySection from '@/components/ApologySection';
-import AutoplayAudio from '@/components/AutoplayAudio';
-import CoupleSection from '@/components/CoupleSection';
-import DressCodeSection from '@/components/DressCodeSection';
-import FooterSection from '@/components/FooterSection';
-import GallerySection from '@/components/GallerySection';
-import GiftSection from '@/components/GiftSection';
-import HeaderSection from '@/components/HeaderSection';
-import LiveCommentSection from '@/components/LiveCommentSection';
-import LocationSection from '@/components/LocationSection';
-import OpenInvitationSection from '@/components/OpenInvitationSection';
-import OurStorySection from '@/components/OurStorySection';
-import RSVPSection from '@/components/RSVPSection';
-import SaveDateSection from '@/components/SaveDateSection';
-import SplashScreen from '@/components/SplashScreen';
-import ThankYouSection from '@/components/ThankYouSection';
-import TimeSection from '@/components/TimeSection';
-import WeddingWishesSection from '@/components/WeddingWishesSection';
-import WelcomeSection from '@/components/WelcomeSection';
-import { Box, ScrollArea } from '@mantine/core';
+import { ScrollArea } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import FooterSection from '@/components/FooterSection';
+import HeaderSection from '@/components/HeaderSection';
+import OpenInvitationSection from '@/components/OpenInvitationSection';
+import SplashScreen from '@/components/SplashScreen';
+import WelcomeSection from '@/components/WelcomeSection';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -29,9 +15,7 @@ const HomePage = () => {
     setOpen(true);
   };
 
-  useEffect(() => {
-    document.body.style.backgroundColor = '#e5f6f3';
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     if (!open) {
@@ -49,7 +33,7 @@ const HomePage = () => {
       <Head>
         <title>Fatih dan Tirta - Wedding Invitation</title>
       </Head>
-      <AutoplayAudio />
+      {/* <AutoplayAudio /> */}
       <motion.div
         style={{
           position: 'absolute',
@@ -74,30 +58,16 @@ const HomePage = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          display: open ? 'block' : 'none',
+          display: open ? 'flex' : 'none',
+          flexDirection: 'column',
         }}
         initial={{ opacity: 0 }}
         animate={open ? { opacity: 1, display: '' } : { opacity: 0 }}
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
-        <Box visibleFrom="md">
-          <HeaderSection />
-        </Box>
-        <ScrollArea left={{ xs: '0%', md: '60%' }} w={{ xs: '100%', md: '40%' }} mih={'200vh'}>
+        <HeaderSection />
+        <ScrollArea ml={'auto'} w={{ xs: '100%', md: '39%' }}>
           <WelcomeSection />
-          <SaveDateSection />
-          <CoupleSection />
-          <OurStorySection />
-          <GallerySection />
-          <LocationSection />
-          <DressCodeSection />
-          <TimeSection />
-          <RSVPSection />
-          <WeddingWishesSection />
-          <LiveCommentSection />
-          <GiftSection />
-          <ApologySection />
-          <ThankYouSection />
         </ScrollArea>
         <FooterSection />
       </motion.div>
