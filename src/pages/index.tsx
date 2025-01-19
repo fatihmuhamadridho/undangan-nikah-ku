@@ -9,6 +9,8 @@ import SplashScreen from '@/components/SplashScreen';
 import WelcomeSection from '@/components/WelcomeSection';
 import SaveDateSection from '@/components/SaveDateSection';
 import OurStorySection from '@/components/OurStorySection';
+import LocationSection from '@/components/LocationSection';
+// import GallerySection from '@/components/GallerySection';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -72,6 +74,16 @@ const HomePage = () => {
           <WelcomeSection />
           <SaveDateSection />
           <OurStorySection />
+          {/* <GallerySection /> */}
+          <LocationSection />
+          {/* <DressCodeSection /> */}
+          {/* <TimeSection /> */}
+          {/* <RSVPSection /> */}
+          {/* <WeddingWishesSection /> */}
+          {/* <LiveCommentSection /> */}
+          {/* <GiftSection /> */}
+          {/* <ApologySection /> */}
+          {/* <ThankYouSection /> */}
         </ScrollArea>
         <FooterSection />
       </motion.div>
