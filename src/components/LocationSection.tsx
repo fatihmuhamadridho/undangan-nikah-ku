@@ -176,7 +176,7 @@ const LocationSection = () => {
                     </Box>
                   </Box>
                 </Box>
-                <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
+                {/* <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
                   <Box
                     className="card bg-[#E5F6F3] text-black border-none text-center rounded-[20px] overflow-hidden relative flex flex-col"
                     style={{ wordWrap: 'break-word', backgroundClip: 'border-box' }}
@@ -286,7 +286,7 @@ const LocationSection = () => {
                       </Box>
                     </Box>
                   </Box>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           </Box>

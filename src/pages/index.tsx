@@ -10,6 +10,7 @@ import WelcomeSection from '@/components/WelcomeSection';
 import SaveDateSection from '@/components/SaveDateSection';
 import OurStorySection from '@/components/OurStorySection';
 import LocationSection from '@/components/LocationSection';
+import WeddingWishesSection from '@/components/WeddingWishesSection';
 // import GallerySection from '@/components/GallerySection';
 
 const HomePage = () => {
@@ -79,7 +80,7 @@ const HomePage = () => {
           {/* <DressCodeSection /> */}
           {/* <TimeSection /> */}
           {/* <RSVPSection /> */}
-          {/* <WeddingWishesSection /> */}
+          <WeddingWishesSection />
           {/* <LiveCommentSection /> */}
           {/* <GiftSection /> */}
           {/* <ApologySection /> */}
