@@ -11,6 +11,9 @@ import SaveDateSection from '@/components/SaveDateSection';
 import OurStorySection from '@/components/OurStorySection';
 import LocationSection from '@/components/LocationSection';
 import WeddingWishesSection from '@/components/WeddingWishesSection';
+import GiftSection from '@/components/GiftSection';
+import ApologySection from '@/components/ApologySection';
+import ThankYouSection from '@/components/ThankYouSection';
 // import GallerySection from '@/components/GallerySection';
 
 const HomePage = () => {
@@ -77,14 +80,10 @@ const HomePage = () => {
           <OurStorySection />
           {/* <GallerySection /> */}
           <LocationSection />
-          {/* <DressCodeSection /> */}
-          {/* <TimeSection /> */}
-          {/* <RSVPSection /> */}
           <WeddingWishesSection />
-          {/* <LiveCommentSection /> */}
-          {/* <GiftSection /> */}
-          {/* <ApologySection /> */}
-          {/* <ThankYouSection /> */}
+          <GiftSection />
+          <ApologySection />
+          <ThankYouSection />
         </ScrollArea>
         <FooterSection />
       </motion.div>
