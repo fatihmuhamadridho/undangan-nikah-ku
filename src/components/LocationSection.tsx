@@ -1,4 +1,4 @@
-import { Box, Text } from '@mantine/core';
+import { Box, Text, UnstyledButton } from '@mantine/core';
 import React from 'react';
 import PineImage from './Images/PineImage';
 import Flower2Image from './Images/Flower2Image';
@@ -10,6 +10,8 @@ import Flower1Image from './Images/Flower1Image';
 import Flower3Image from './Images/Flower3Image';
 import Flower4Image from './Images/Flower4Image';
 import UnionVenueImage from './Images/UnionVenueImage';
+import MountainImage from './Images/MountainImage';
+import { IconClothesRackOff, IconLocation } from '@tabler/icons-react';
 
 const LocationSection = () => {
   return (
@@ -51,12 +53,12 @@ const LocationSection = () => {
                       Dengan penuh rasa hormat kami mengharapkan kehadiran Bapak/Ibu/Saudara
                       sekalian pada Acara Pernikahan kami yang akan kami laksanakan pada :
                     </Text>
-                    <Text className="!mb-[0.5rem]">Minggu, 5 Mei 2025</Text>
+                    {/* <Text className="!mb-[0.5rem]">Minggu, 5 Mei 2025</Text>
                     <Text className="!mb-[1rem]">
                       Besar harapan kami akan kehadiran Bapak/Ibu/Saudara sekalian tentunya dengan
                       memperhatikan anjuran dari Pemerintah. Untuk itu kami memberlakukan protokol
                       kesehatan sebagaimana instruksi dibawah ini
-                    </Text>
+                    </Text> */}
                   </Box>
                 </Box>
               </Box>
@@ -170,6 +172,45 @@ const LocationSection = () => {
                             <Text>Monday,</Text>
                             <Text>May 2025</Text>
                             <Text>08:00 - 10.00</Text>
+                          </Box>
+                        </Box>
+                      </Box>
+                      <Box className="relative">
+                        <Box className="ornaments-wrapper absolute inset-0">
+                          <Box
+                            className="absolute bottom-0 left-1/2 w-full h-full"
+                            style={{ transform: 'translate(-50%, 0)' }}
+                          >
+                            <Box className="h-full">
+                              <MountainImage
+                                className="w-full h-full"
+                                style={{
+                                  opacity: 0.4,
+                                  objectFit: 'cover',
+                                  verticalAlign: 'middle',
+                                  overflowClipMargin: 'content-box',
+                                  overflow: 'clip',
+                                }}
+                              />
+                            </Box>
+                          </Box>
+                        </Box>
+                        <Box className="event-place-body relative py-[3rem] px-[2rem]">
+                          <Box className="relative mb-[1rem]">
+                            <IconClothesRackOff className="justify-self-center" size={56} />
+                            <Box>No White Dress</Box>
+                          </Box>
+                          <Box className="relative my-[1rem]">
+                            <IconLocation className="justify-self-center" size={40} />
+                          </Box>
+                          <Text className="!pb-[1rem] !mb-2" fz={26}>
+                            GKY Greenville
+                          </Text>
+                          <Box>
+                            <Text fz={16}>Komplek Green Ville Blok AZ no. 1, West Jakarta</Text>
+                          </Box>
+                          <Box className="relative w-full mt-[1rem]">
+                            <UnstyledButton>Location</UnstyledButton>
                           </Box>
                         </Box>
                       </Box>
