@@ -64,7 +64,7 @@ const ApologySection = () => {
           <PineImage />
         </Box>
       </Box>
-      <Box className="container relative px-[1.8rem] min-h-[200px]">
+      <Box className="container relative px-[1.8rem] min-h-[200px] mx-auto">
         <Box className="flex flex-wrap justify-center">
           <Box className="text-center relative w-full" style={{ flex: '0 0 auto' }}>
             <Box className="relative">

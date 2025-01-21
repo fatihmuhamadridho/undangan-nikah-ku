@@ -39,7 +39,7 @@ const LocationSection = () => {
               </Box>
             </Box>
           </Box>
-          <Box className="container px-[1.8rem] relative">
+          <Box className="container px-[1.8rem] relative mx-auto">
             <Box className="flex flex-wrap justify-center">
               <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
                 <Box className="relative text-center px-[1.5rem] mb-[3rem]">

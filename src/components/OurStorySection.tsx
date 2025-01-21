@@ -43,7 +43,7 @@ const OurStorySection = () => {
           </Box>
         </Box>
       </Box>
-      <Box className="container px-[1.8rem]">
+      <Box className="container px-[1.8rem] mx-auto">
         <Box className="flex flex-wrap justify-center">
           <Box className="w-[92%]" style={{ flex: '0 0 auto' }}>
             <Box className="image-wrapper relative w-full mb-[2rem]">
