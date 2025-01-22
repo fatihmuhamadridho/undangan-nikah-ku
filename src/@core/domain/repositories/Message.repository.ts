@@ -1,12 +1,17 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import { DTOProps, ResponseProps } from '../entities/Global';
-import { Message } from '../entities/Message';
+import { PromiseResponseProps } from '../entities/Global';
+import {
+  CreateMessageDTO,
+  DeleteMessageDTO,
+  FindManyMessageDTO,
+  FindOneMessageDTO,
+  MessageResp,
+  UpdateMessageDTO,
+} from '../entities/Message';
 
 export abstract class MessageRepository {
-  abstract findMany(params?: DTOProps<any, any, any>): Promise<ResponseProps<Message[]>>;
-  abstract findOne(params?: DTOProps<any, any, any>): Promise<ResponseProps<Message>>;
-  abstract create(params?: DTOProps<any, any, any>): Promise<ResponseProps<Message>>;
-  abstract update(params?: DTOProps<any, any, any>): Promise<ResponseProps<Message>>;
-  abstract delete(params?: DTOProps<any, any, any>): Promise<ResponseProps<Message>>;
+  abstract findMany(props?: FindManyMessageDTO): PromiseResponseProps<MessageResp[]>;
+  abstract findOne(props?: FindOneMessageDTO): PromiseResponseProps<MessageResp>;
+  abstract create(props?: CreateMessageDTO): PromiseResponseProps<MessageResp>;
+  abstract update(props?: UpdateMessageDTO): PromiseResponseProps<MessageResp>;
+  abstract delete(props?: DeleteMessageDTO): PromiseResponseProps<MessageResp>;
 }

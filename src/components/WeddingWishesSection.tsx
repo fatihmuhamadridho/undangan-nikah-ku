@@ -11,10 +11,7 @@ const WeddingWishesSection = () => {
     <Box className="relative overflow-hidden">
       <Box className="wishes-wrapper-form relative pt-[3rem]">
         <Box className="ornaments-wrapper absolute inset-0">
-          <Box
-            className="orn-1 absolute top-0 left-0 w-[30%]"
-            style={{ transform: 'translate(-50%, 0px)' }}
-          >
+          <Box className="orn-1 absolute top-0 left-0 w-[30%]" style={{ transform: 'translate(-50%, 0px)' }}>
             <Flower1Image />
           </Box>
           <Box
@@ -23,16 +20,10 @@ const WeddingWishesSection = () => {
           >
             <Flower3Image />
           </Box>
-          <Box
-            className="orn-3 absolute bottom-0 left-0 w-[30%]"
-            style={{ transform: 'translate(-60%, 10%)' }}
-          >
+          <Box className="orn-3 absolute bottom-0 left-0 w-[30%]" style={{ transform: 'translate(-60%, 10%)' }}>
             <PalmImage />
           </Box>
-          <Box
-            className="orn-4 absolute bottom-0 right-0 w-[30%]"
-            style={{ transform: 'translate(60%, 10%)' }}
-          >
+          <Box className="orn-4 absolute bottom-0 right-0 w-[30%]" style={{ transform: 'translate(60%, 10%)' }}>
             <PalmImage />
           </Box>
           <Box
@@ -74,10 +65,7 @@ const WeddingWishesSection = () => {
       </Box>
       <Box className="wishes-preview relative bg-[#9CB29E]">
         <Box className="ornaments-wrapper absolute inset-0">
-          <Box
-            className="absolute bottom-0 left-1/2 w-full h-full"
-            style={{ transform: 'translate(-50%, 0)' }}
-          >
+          <Box className="absolute bottom-0 left-1/2 w-full h-full" style={{ transform: 'translate(-50%, 0)' }}>
             <Box className="h-full">
               <BgImage
                 className="w-full h-full object-cover align-middle"
@@ -100,10 +88,7 @@ const WeddingWishesSection = () => {
                 <Box className="overflow-hidden py-[2rem]" style={{ flex: '1 1 auto' }}>
                   <Box className="block">
                     <Box className="text-left max-h-[32rem] overflow-auto pr-[1rem] text-black">
-                      <Box
-                        className="mb-[1.5rem] grid"
-                        style={{ gridTemplateColumns: 'auto 1fr', gap: '1rem' }}
-                      >
+                      <Box className="mb-[1.5rem] grid" style={{ gridTemplateColumns: 'auto 1fr', gap: '1rem' }}>
                         <Box className="wish-badge bg-white w-[35px] aspect-square flex justify-center items-center rounded-[50px]">
                           V
                         </Box>

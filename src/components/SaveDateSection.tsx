@@ -16,22 +16,13 @@ const SaveDateSection = () => {
     <Box className="relative pb-[3rem] overflow-hidden" bg={'#9CB29E'}>
       <Box className="relative w-full" pt={80} pb={48}>
         <Box className="absolute inset-0">
-          <Box
-            className="absolute top-0 left-1/2 w-[120%]"
-            style={{ transform: 'translate(-50%, 0)' }}
-          >
+          <Box className="absolute top-0 left-1/2 w-[120%]" style={{ transform: 'translate(-50%, 0)' }}>
             <MountainImage />
           </Box>
-          <Box
-            className="absolute top-0 left-0 w-[35%]"
-            style={{ transform: 'translate(-65%, 0)' }}
-          >
+          <Box className="absolute top-0 left-0 w-[35%]" style={{ transform: 'translate(-65%, 0)' }}>
             <BranchImage />
           </Box>
-          <Box
-            className="absolute top-0 right-0 w-[35%]"
-            style={{ transform: 'translate(65%, 0) rotate(-35deg)' }}
-          >
+          <Box className="absolute top-0 right-0 w-[35%]" style={{ transform: 'translate(65%, 0) rotate(-35deg)' }}>
             <BranchImage />
           </Box>
         </Box>
@@ -90,10 +81,7 @@ const SaveDateSection = () => {
                     <Flower1Image />
                   </Box>
                 </Box>
-                <Box
-                  className="ornaments-wrapper absolute inset-0"
-                  style={{ transform: 'scaleX(-1)' }}
-                >
+                <Box className="ornaments-wrapper absolute inset-0" style={{ transform: 'scaleX(-1)' }}>
                   <Box
                     className="orn-3 absolute bottom-[-2.5rem] right-1/2 w-[20%]"
                     style={{ transform: 'rotate(-40deg) scaleX(-1)' }}
@@ -137,23 +125,17 @@ const SaveDateSection = () => {
             <Box className="w-full" style={{ flex: '0 0 auto' }}>
               <Box className="relative text-center mb-[3rem]">
                 <Box className="ornaments-wrapper absolute inset-0">
-                  <Box
-                    className="absolute top-0 left-0 w-1/2"
-                    style={{ transform: 'translate(-40%, -50%)' }}
-                  >
+                  <Box className="absolute top-0 left-0 w-1/2" style={{ transform: 'translate(-40%, -50%)' }}>
                     <CloudImage />
                   </Box>
-                  <Box
-                    className="absolute bottom-0 right-0 w-1/2"
-                    style={{ transform: 'translate(50%, 50%)' }}
-                  >
+                  <Box className="absolute bottom-0 right-0 w-1/2" style={{ transform: 'translate(50%, 50%)' }}>
                     <CloudImage />
                   </Box>
                 </Box>
                 <Box className="relative w-full text-center mb-[1.25rem]">Bride & Groom</Box>
                 <Box className="relative">
-                  Kami adalah sepasang manusia yang sedang berbahagia. Kami mengundang
-                  Bapak/Ibu/Saudara sekalian untuk menghadiri hari bahagia kami. Ini adalah kami
+                  Kami adalah sepasang manusia yang sedang berbahagia. Kami mengundang Bapak/Ibu/Saudara sekalian untuk
+                  menghadiri hari bahagia kami. Ini adalah kami
                 </Box>
               </Box>
             </Box>

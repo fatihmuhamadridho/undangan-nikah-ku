@@ -10,8 +10,7 @@ import Flower4Image from './Images/Flower4Image';
 import PalmImage from './Images/PalmImage';
 
 const HeaderSection = () => {
-  const BACKGROUND_IMAGE =
-    process.env.NODE_ENV === 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
+  const BACKGROUND_IMAGE = process.env.NODE_ENV === 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
 
   return (
     <Box className="fixed inset-0 block overflow-hidden" w={'61%'} h={'100vh'} visibleFrom="md">
@@ -22,10 +21,7 @@ const HeaderSection = () => {
       <Box className="absolute inset-0 w-full h-full top-0 left-0 bg-cover bg-black/30"></Box>
       <Box className="absolute inset-0">
         {/* top-left */}
-        <Box
-          className="absolute top-0 left-0 w-[25%]"
-          style={{ transform: 'translate(-30%, -10%)' }}
-        >
+        <Box className="absolute top-0 left-0 w-[25%]" style={{ transform: 'translate(-30%, -10%)' }}>
           <BranchImage className="relative w-full h-auto" />
         </Box>
         <Box className="absolute top-8 left-0 w-[20%]" style={{ transform: 'translate(-50%, 0)' }}>
@@ -36,16 +32,10 @@ const HeaderSection = () => {
         </Box>
 
         {/* top-right */}
-        <Box
-          className="absolute top-0 right-0 w-[25%]"
-          style={{ transform: 'translate(30%, -10%) scaleX(-1)' }}
-        >
+        <Box className="absolute top-0 right-0 w-[25%]" style={{ transform: 'translate(30%, -10%) scaleX(-1)' }}>
           <BranchImage className="relative w-full h-auto" />
         </Box>
-        <Box
-          className="absolute top-8 right-0 w-[20%]"
-          style={{ transform: 'translate(50%, 0) rotate(-30deg)' }}
-        >
+        <Box className="absolute top-8 right-0 w-[20%]" style={{ transform: 'translate(50%, 0) rotate(-30deg)' }}>
           <Flower2Image className="relative w-full h-auto" />
           <Box className="absolute top-[50%] -left-[30%] w-full">
             <Flower1Image className="relative w-full h-auto" />
@@ -53,19 +43,13 @@ const HeaderSection = () => {
         </Box>
 
         {/* bottom-left */}
-        <Box
-          className="absolute bottom-0 left-4 w-[30%]"
-          style={{ transform: 'translate(-40%, 0)' }}
-        >
+        <Box className="absolute bottom-0 left-4 w-[30%]" style={{ transform: 'translate(-40%, 0)' }}>
           <PineImage className="relative w-full h-auto" />
           <Box className="absolute top-[35%] left-[35%] w-full">
             <PalmImage />
           </Box>
         </Box>
-        <Box
-          className="absolute bottom-0 left-0 w-[23%]"
-          style={{ transform: 'translate(-30%, 40%)' }}
-        >
+        <Box className="absolute bottom-0 left-0 w-[23%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="absolute bottom-[60%] right-[25%] w-[80%]">
             <Flower2Image className="relative w-full h-auto" />
           </Box>
@@ -79,19 +63,13 @@ const HeaderSection = () => {
         </Box>
 
         {/* bottom-right */}
-        <Box
-          className="absolute bottom-0 right-4 w-[30%]"
-          style={{ transform: 'translate(40%, 0) scaleX(-1)' }}
-        >
+        <Box className="absolute bottom-0 right-4 w-[30%]" style={{ transform: 'translate(40%, 0) scaleX(-1)' }}>
           <PineImage className="relative w-full h-auto" />
           <Box className="absolute top-[35%] left-[35%] w-full">
             <PalmImage />
           </Box>
         </Box>
-        <Box
-          className="absolute bottom-0 right-0 w-[23%]"
-          style={{ transform: 'translate(30%, 40%) scaleX(-1)' }}
-        >
+        <Box className="absolute bottom-0 right-0 w-[23%]" style={{ transform: 'translate(30%, 40%) scaleX(-1)' }}>
           <Box className="absolute bottom-[60%] right-[25%] w-[80%]">
             <Flower2Image className="relative w-full h-auto" />
           </Box>

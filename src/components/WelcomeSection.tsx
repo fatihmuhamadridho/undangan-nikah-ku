@@ -17,10 +17,7 @@ const WelcomeSection = () => {
   return (
     <Box className="relative overflow-hidden">
       <Box className="absolute inset-0">
-        <Box
-          className="absolute bottom-0 left-1/2 w-[120%]"
-          style={{ transform: 'translate(-50%, 0)' }}
-        >
+        <Box className="absolute bottom-0 left-1/2 w-[120%]" style={{ transform: 'translate(-50%, 0)' }}>
           <Box
             className="absolute bottom-0 left-1/2 w-full"
             style={{ transform: 'translate(-50%, 35%)', opacity: 0.6 }}
@@ -32,10 +29,7 @@ const WelcomeSection = () => {
       </Box>
       <Box className="absolute inset-0">
         {/* top-left */}
-        <Box
-          className="absolute top-0 left-0 w-[35%]"
-          style={{ transform: 'translate(-30%, -10%)' }}
-        >
+        <Box className="absolute top-0 left-0 w-[35%]" style={{ transform: 'translate(-30%, -10%)' }}>
           <BranchImage />
         </Box>
         <Box className="absolute top-8 left-0 w-[30%]" style={{ transform: 'translate(-50%, 0)' }}>
@@ -46,16 +40,10 @@ const WelcomeSection = () => {
         </Box>
 
         {/* top-right */}
-        <Box
-          className="absolute top-0 right-0 w-[35%]"
-          style={{ transform: 'translate(30%, -10%) scaleX(-1)' }}
-        >
+        <Box className="absolute top-0 right-0 w-[35%]" style={{ transform: 'translate(30%, -10%) scaleX(-1)' }}>
           <BranchImage />
         </Box>
-        <Box
-          className="absolute top-8 right-0 w-[30%]"
-          style={{ transform: 'translate(50%, 0) rotate(-30deg)' }}
-        >
+        <Box className="absolute top-8 right-0 w-[30%]" style={{ transform: 'translate(50%, 0) rotate(-30deg)' }}>
           <Flower2Image />
           <Box className="absolute top-1/2 -left-[30%] w-full">
             <Flower1Image />
@@ -63,25 +51,16 @@ const WelcomeSection = () => {
         </Box>
 
         {/* bottom-left */}
-        <Box
-          className="absolute bottom-8 left-0 w-[70%]"
-          style={{ transform: 'translate(-75%, 0)' }}
-        >
+        <Box className="absolute bottom-8 left-0 w-[70%]" style={{ transform: 'translate(-75%, 0)' }}>
           <TreeImage />
         </Box>
-        <Box
-          className="absolute bottom-0 left-4 w-[40%]"
-          style={{ transform: 'translate(-40%, 0)' }}
-        >
+        <Box className="absolute bottom-0 left-4 w-[40%]" style={{ transform: 'translate(-40%, 0)' }}>
           <PineImage />
           <Box className="absolute top-[35%] left-[35%] w-full">
             <PalmImage />
           </Box>
         </Box>
-        <Box
-          className="absolute bottom-0 left-0 w-[35%]"
-          style={{ transform: 'translate(-30%, 40%)' }}
-        >
+        <Box className="absolute bottom-0 left-0 w-[35%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="absolute bottom-[60%] right-[25%] w-[80%]">
             <Flower2Image />
           </Box>
@@ -95,26 +74,17 @@ const WelcomeSection = () => {
         </Box>
 
         {/* bottom-right */}
-        <Box
-          className="absolute bottom-8 right-0 w-[70%]"
-          style={{ transform: 'translate(75%, 0)' }}
-        >
+        <Box className="absolute bottom-8 right-0 w-[70%]" style={{ transform: 'translate(75%, 0)' }}>
           <TreeImage />
         </Box>
         <Box className="absolute inset-0" style={{ transform: 'scaleX(-1)' }}>
-          <Box
-            className="absolute bottom-0 left-4 w-[40%]"
-            style={{ transform: 'translate(-40%, 0)' }}
-          >
+          <Box className="absolute bottom-0 left-4 w-[40%]" style={{ transform: 'translate(-40%, 0)' }}>
             <PineImage />
             <Box className="absolute top-[35%] left-[35%] w-full">
               <PalmImage />
             </Box>
           </Box>
-          <Box
-            className="absolute bottom-0 left-0 w-[35%]"
-            style={{ transform: 'translate(-30%, 40%)' }}
-          >
+          <Box className="absolute bottom-0 left-0 w-[35%]" style={{ transform: 'translate(-30%, 40%)' }}>
             <Box className="absolute bottom-[60%] right-[25%] w-[80%]">
               <Flower2Image />
             </Box>

@@ -10,16 +10,10 @@ const GiftSection = () => {
   return (
     <Box className="relative text-center py-[3rem] overflow-hidden">
       <Box className="ornaments-wrapper absolute inset-0">
-        <Box
-          className="orn-1 absolute top-0 left-0 w-[45%]"
-          style={{ transform: 'translate(-70%, 0)' }}
-        >
+        <Box className="orn-1 absolute top-0 left-0 w-[45%]" style={{ transform: 'translate(-70%, 0)' }}>
           <PalmImage />
         </Box>
-        <Box
-          className="orn-2 absolute top-0 right-0 w-[45%]"
-          style={{ transform: 'translate(70%, 0)' }}
-        >
+        <Box className="orn-2 absolute top-0 right-0 w-[45%]" style={{ transform: 'translate(70%, 0)' }}>
           <PalmImage />
         </Box>
       </Box>
@@ -48,10 +42,9 @@ const GiftSection = () => {
               </Box>
               <Box className="px-[1rem] mb-[1rem]">
                 <Text c={'white'} ta={'center'}>
-                  Bapak/Ibu/Saudara sekalian dapat memberikan hadiah digital kepada kami melalui
-                  form dibawah. Bagi yang telah mengisi dan memberikan hadiah kepada kami, kami
-                  mengucapkan banyak terimakasih. Semoga hadiah dari Bapak/Ibu/Saudara dapat
-                  bermanfaat bagi kami dalam mengarungi bahtera rumah tangga
+                  Bapak/Ibu/Saudara sekalian dapat memberikan hadiah digital kepada kami melalui form dibawah. Bagi yang
+                  telah mengisi dan memberikan hadiah kepada kami, kami mengucapkan banyak terimakasih. Semoga hadiah
+                  dari Bapak/Ibu/Saudara dapat bermanfaat bagi kami dalam mengarungi bahtera rumah tangga
                 </Text>
               </Box>
               <Box className="w-full text-black flex flex-col items-center gap-4">

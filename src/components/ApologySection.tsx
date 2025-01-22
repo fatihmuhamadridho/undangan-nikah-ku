@@ -27,40 +27,22 @@ const ApologySection = () => {
             />
           </Box>
         </Box>
-        <Box
-          className="orn-1 absolute top-[1rem] left-0 w-[25%]"
-          style={{ transform: 'translate(-50%, 0)' }}
-        >
+        <Box className="orn-1 absolute top-[1rem] left-0 w-[25%]" style={{ transform: 'translate(-50%, 0)' }}>
           <Flower2Image />
         </Box>
-        <Box
-          className="orn-2 absolute top-0 right-0 w-[25%]"
-          style={{ transform: 'translate(60%, 0) rotate(-20deg)' }}
-        >
+        <Box className="orn-2 absolute top-0 right-0 w-[25%]" style={{ transform: 'translate(60%, 0) rotate(-20deg)' }}>
           <Flower2Image />
         </Box>
-        <Box
-          className="tree-1 absolute bottom-0 left-0 w-[45%]"
-          style={{ transform: 'translate(-80%, 10%)' }}
-        >
+        <Box className="tree-1 absolute bottom-0 left-0 w-[45%]" style={{ transform: 'translate(-80%, 10%)' }}>
           <TreeImage />
         </Box>
-        <Box
-          className="tree-2 absolute bottom-0 right-0 w-[40%]"
-          style={{ transform: 'translate(80%, 0)' }}
-        >
+        <Box className="tree-2 absolute bottom-0 right-0 w-[40%]" style={{ transform: 'translate(80%, 0)' }}>
           <TreeImage />
         </Box>
-        <Box
-          className="orn-3 absolute bottom-0 left-0 w-[35%]"
-          style={{ transform: 'translate(-70%, 1.5rem)' }}
-        >
+        <Box className="orn-3 absolute bottom-0 left-0 w-[35%]" style={{ transform: 'translate(-70%, 1.5rem)' }}>
           <PineImage />
         </Box>
-        <Box
-          className="orn-4 absolute bottom-0 right-0 w-[35%]"
-          style={{ transform: 'translate(70%, 1.5rem)' }}
-        >
+        <Box className="orn-4 absolute bottom-0 right-0 w-[35%]" style={{ transform: 'translate(70%, 1.5rem)' }}>
           <PineImage />
         </Box>
       </Box>
@@ -73,9 +55,8 @@ const ApologySection = () => {
               </Box>
               <Box className="w-[92%] mx-auto">
                 <Text>
-                  Tanpa mengurangi rasa hormat, Izinkan kami mengharapkan kehadiran
-                  Bapak/lbu/Saudara/i melalui undangan digital ini, serta dapat memberikan doa restu
-                  kepada kami.
+                  Tanpa mengurangi rasa hormat, Izinkan kami mengharapkan kehadiran Bapak/lbu/Saudara/i melalui undangan
+                  digital ini, serta dapat memberikan doa restu kepada kami.
                 </Text>
                 <Text>Terima kasih.</Text>
               </Box>

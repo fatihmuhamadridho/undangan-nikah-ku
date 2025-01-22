@@ -1,16 +1,18 @@
 import { MessageRepository } from '@/@core/domain/repositories/Message.repository';
+import { PromiseResponseProps, Usecase } from '../../entities/Global';
+import { CreateMessageDTO, FindManyMessageDTO, MessageResp } from '../../entities/Message';
 
-export class GetAllMessageUsecase {
+export class GetAllMessageUsecase implements Usecase<FindManyMessageDTO, PromiseResponseProps<MessageResp[]>> {
   constructor(private messageRepository: MessageRepository) {}
-  async execute() {
+  execute(props?: FindManyMessageDTO | undefined): PromiseResponseProps<MessageResp[]> {
     // await this.messageRepository.create();
-    return this.messageRepository.findMany();
+    return this.messageRepository.findMany(props);
   }
 }
 
-export class CreateMessageUsecase {
+export class CreateMessageUsecase implements Usecase<CreateMessageDTO, PromiseResponseProps<MessageResp>> {
   constructor(private messageRepository: MessageRepository) {}
-  execute() {
-    return this.messageRepository.create();
+  execute(props?: CreateMessageDTO | undefined): PromiseResponseProps<MessageResp> {
+    return this.messageRepository.create(props);
   }
 }

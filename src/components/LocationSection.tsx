@@ -19,24 +19,15 @@ const LocationSection = () => {
       <Box className="venue-section relative bg-[#9CB29E] text-[#ffffff] py-[3rem]">
         <Box className="relative">
           <Box className="ornaments-wrappe">
-            <Box
-              className="orn-1 absolute top-0 left-0 w-[30%]"
-              style={{ transform: 'translate(-65%, -35%)' }}
-            >
+            <Box className="orn-1 absolute top-0 left-0 w-[30%]" style={{ transform: 'translate(-65%, -35%)' }}>
               <PineImage />
               <Box className="orn-2 absolute top-[25%] right-[-10%] w-[80%]">
                 <Flower2Image />
               </Box>
             </Box>
-            <Box
-              className="orn-3 absolute top-0 right-0 w-[30%]"
-              style={{ transform: 'translate(65%, -35%)' }}
-            >
+            <Box className="orn-3 absolute top-0 right-0 w-[30%]" style={{ transform: 'translate(65%, -35%)' }}>
               <PineImage />
-              <Box
-                className="orn-4 absolute top-[25%] left-[10%] w-[80%]"
-                style={{ transform: 'rotate(-45deg)' }}
-              >
+              <Box className="orn-4 absolute top-[25%] left-[10%] w-[80%]" style={{ transform: 'rotate(-45deg)' }}>
                 <Flower2Image />
               </Box>
             </Box>
@@ -50,8 +41,8 @@ const LocationSection = () => {
                   </Box>
                   <Box className="position-relative relative">
                     <Text className="!mb-[1rem]">
-                      Dengan penuh rasa hormat kami mengharapkan kehadiran Bapak/Ibu/Saudara
-                      sekalian pada Acara Pernikahan kami yang akan kami laksanakan pada :
+                      Dengan penuh rasa hormat kami mengharapkan kehadiran Bapak/Ibu/Saudara sekalian pada Acara
+                      Pernikahan kami yang akan kami laksanakan pada :
                     </Text>
                     {/* <Text className="!mb-[0.5rem]">Minggu, 5 Mei 2025</Text>
                     <Text className="!mb-[1rem]">

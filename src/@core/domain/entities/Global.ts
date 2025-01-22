@@ -13,8 +13,23 @@ export interface ResponseProps<T> {
   data?: T;
 }
 
-export interface DTOProps<T = any, U = any, V = any> {
-  query?: T;
-  params?: U;
-  payload?: V;
+export type PromiseResponseProps<T> = Promise<ResponseProps<T>>;
+
+export interface DefaultMetaDTOProps {
+  page?: number;
+  limit?: number;
+}
+
+export interface DTOProps<
+  Props extends { Query?: any; Params?: any; Payload?: any } = {
+    Query?: DefaultMetaDTOProps;
+  },
+> {
+  query?: Props['Query'];
+  params?: Props['Params'];
+  payload?: Props['Payload'];
+}
+
+export interface Usecase<Props = any, Response = any> {
+  execute(props?: Props): Response;
 }

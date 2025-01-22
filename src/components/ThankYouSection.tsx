@@ -17,10 +17,7 @@ const ThankYouSection = () => {
   return (
     <Box className="relative py-[3rem] text-center overflow-hidden">
       <Box className="ornaments-wrapper absolute inset-0">
-        <Box
-          className="absolute bottom-0 left-1/2 w-[120%]"
-          style={{ transform: 'translate(-50%, 0)' }}
-        >
+        <Box className="absolute bottom-0 left-1/2 w-[120%]" style={{ transform: 'translate(-50%, 0)' }}>
           <Box
             className="bg-2 absolute bottom-0 left-1/2 w-full"
             style={{ transform: 'translate(-50%, 35%)', opacity: 0.6 }}
@@ -33,34 +30,19 @@ const ThankYouSection = () => {
         </Box>
       </Box>
       <Box className="ornaments-wrapper absolute inset-0">
-        <Box
-          className="orn-1 absolute top-0 left-0 w-[35%]"
-          style={{ transform: 'translate(-30%, -10%)' }}
-        >
+        <Box className="orn-1 absolute top-0 left-0 w-[35%]" style={{ transform: 'translate(-30%, -10%)' }}>
           <BranchImage />
         </Box>
-        <Box
-          className="orn-2 absolute top-0 right-0 w-[35%]"
-          style={{ transform: 'translate(30%, -10%) scaleX(-1)' }}
-        >
+        <Box className="orn-2 absolute top-0 right-0 w-[35%]" style={{ transform: 'translate(30%, -10%) scaleX(-1)' }}>
           <BranchImage />
         </Box>
-        <Box
-          className="tree-1 absolute bottom-[2rem] left-0 w-[70%]"
-          style={{ transform: 'translate(-65%, 0)' }}
-        >
+        <Box className="tree-1 absolute bottom-[2rem] left-0 w-[70%]" style={{ transform: 'translate(-65%, 0)' }}>
           <TreeImage />
         </Box>
-        <Box
-          className="tree-2 absolute bottom-[2rem] right-0 w-[70%]"
-          style={{ transform: 'translate(75%, 0)' }}
-        >
+        <Box className="tree-2 absolute bottom-[2rem] right-0 w-[70%]" style={{ transform: 'translate(75%, 0)' }}>
           <TreeImage />
         </Box>
-        <Box
-          className="orn-3 absolute top-[2rem] left-0 w-[30%]"
-          style={{ transform: 'translate(-50%, 0)' }}
-        >
+        <Box className="orn-3 absolute top-[2rem] left-0 w-[30%]" style={{ transform: 'translate(-50%, 0)' }}>
           <Flower2Image />
           <Box className="absolute top-[40%] right-[5%] w-full">
             <Flower1Image />
@@ -75,19 +57,13 @@ const ThankYouSection = () => {
             <Flower1Image />
           </Box>
         </Box>
-        <Box
-          className="orn-7 absolute bottom-0 left-[1rem] w-[40%]"
-          style={{ transform: 'translate(-40%, 0)' }}
-        >
+        <Box className="orn-7 absolute bottom-0 left-[1rem] w-[40%]" style={{ transform: 'translate(-40%, 0)' }}>
           <PineImage />
           <Box className="absolute top-[35%] left-[35%] w-full">
             <PalmImage />
           </Box>
         </Box>
-        <Box
-          className="orn-9 absolute bottom-0 left-0 w-[30%]"
-          style={{ transform: 'translate(-30%, 40%)' }}
-        >
+        <Box className="orn-9 absolute bottom-0 left-0 w-[30%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="orn-10 absolute bottom-[60%] right-1/4 w-[80%]">
             <Flower2Image />
           </Box>
@@ -101,19 +77,13 @@ const ThankYouSection = () => {
         </Box>
       </Box>
       <Box className="ornaments-wrapper absolute inset-0" style={{ transform: 'scaleX(-1)' }}>
-        <Box
-          className="absolute bottom-0 left-[1rem] w-[40%]"
-          style={{ transform: 'translate(-40%, 0)' }}
-        >
+        <Box className="absolute bottom-0 left-[1rem] w-[40%]" style={{ transform: 'translate(-40%, 0)' }}>
           <PineImage />
           <Box className="absolute top-[35%] left-[35%] w-full">
             <PalmImage />
           </Box>
         </Box>
-        <Box
-          className="absolute bottom-0 left-0 w-[30%]"
-          style={{ transform: 'translate(-30%, 40%)' }}
-        >
+        <Box className="absolute bottom-0 left-0 w-[30%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="absolute bottom-[60%] right-1/4 w-[80%]">
             <Flower3Image />
           </Box>
@@ -175,11 +145,10 @@ const ThankYouSection = () => {
                   <Text fz={38}>Thank You</Text>
                 </Box>
                 <Box className="relative">
-                  Kami mengucapkan terimakasih kepada Bapak/Ibu/Saudara yang telah menghadiri
-                  seluruh rangkaian acara pernikahan kami. Semoga waktu yang diberikan oleh
-                  Bapak/Ibu/Saudara sekalian menjadi berkah dan manfaat yang kelak dibalas oleh
-                  Tuhan Yang Maha Esa. Terima kasih atas seluruh ucapan yang diberikan. Semoga kami
-                  menjadi pasangan yang berbahagia dunia dan akhirat :)
+                  Kami mengucapkan terimakasih kepada Bapak/Ibu/Saudara yang telah menghadiri seluruh rangkaian acara
+                  pernikahan kami. Semoga waktu yang diberikan oleh Bapak/Ibu/Saudara sekalian menjadi berkah dan
+                  manfaat yang kelak dibalas oleh Tuhan Yang Maha Esa. Terima kasih atas seluruh ucapan yang diberikan.
+                  Semoga kami menjadi pasangan yang berbahagia dunia dan akhirat :)
                 </Box>
               </Box>
             </Box>
