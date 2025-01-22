@@ -21,6 +21,7 @@ export class PrismaMessageAdapter implements MessageRepository {
       .findMany({
         take: metaData.getLimit(),
         skip: metaData.getOffset(),
+        select: { message_id: false, message: true, username: true, createdAt: true, updatedAt: true },
       })
       .then(
         (response: MessageResp[]) =>
@@ -49,7 +50,10 @@ export class PrismaMessageAdapter implements MessageRepository {
   create(props?: CreateMessageDTO): PromiseResponseProps<MessageResp> {
     const { username, message } = props?.payload || {};
     return prisma.message
-      .create({ data: { message: message!, username: username! } })
+      .create({
+        data: { message: message!, username: username! },
+        select: { message_id: false, message: true, username: true, createdAt: true, updatedAt: true },
+      })
       .then((response) => ({
         status: true,
         message: 'Messages retrieved successfully',

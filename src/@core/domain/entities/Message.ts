@@ -6,11 +6,11 @@ interface Message {
   message_id?: string;
   username: string;
   message: string;
-  createdAt: any;
-  updatedAt: any;
+  createdAt?: any;
+  updatedAt?: any;
 }
 
-export type MessageResp = Message;
+export type MessageResp = Omit<Message, 'message_id'>;
 export type FindManyMessageDTO = DTOProps<{ Query?: DefaultMetaDTOProps }>;
 export type FindOneMessageDTO = DTOProps<{ Query: Pick<Message, 'message_id'> }>;
 export type CreateMessageDTO = DTOProps<{ Payload: Omit<Message, 'message_id' | 'createdAt' | 'updatedAt'> }>;

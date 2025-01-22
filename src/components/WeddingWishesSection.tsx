@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Text, Textarea, TextInput, UnstyledButton } from '@mantine/core';
 import React from 'react';
 import Flower1Image from './Images/Flower1Image';
@@ -5,8 +6,21 @@ import Flower3Image from './Images/Flower3Image';
 import PalmImage from './Images/PalmImage';
 import PineImage from './Images/PineImage';
 import BgImage from './Images/BgImage';
+import { HttpMessageAdapter } from '@/@core/infra/adapters/http/HttpMessage.adapter';
+import { CreateMessageUsecase } from '@/@core/domain/usecases/message/Message.usecase';
 
 const WeddingWishesSection = () => {
+  const httpMessageAdapter = new HttpMessageAdapter();
+  const createMessageUsecase = new CreateMessageUsecase(httpMessageAdapter);
+
+  const handleSubmit = async () => {
+    try {
+      const response = await createMessageUsecase.execute({ payload: { username: 'test', message: 'test' } });
+      console.log({ response });
+    } catch (error: any) {
+      alert(error?.message);
+    }
+  };
   return (
     <Box className="relative overflow-hidden">
       <Box className="wishes-wrapper-form relative pt-[3rem]">
@@ -52,7 +66,10 @@ const WeddingWishesSection = () => {
                     <form action="">
                       <TextInput label="name" />
                       <Textarea label="Write your wishes" />
-                      <UnstyledButton className="!bg-[#4B5B40] !py-[0.65rem] !px-[2rem] !text-white rounded-[50px] mx-auto w-full !font-[400] !text-center align-middle !text-[1rem]">
+                      <UnstyledButton
+                        className="!bg-[#4B5B40] !py-[0.65rem] !px-[2rem] !text-white rounded-[50px] mx-auto w-full !font-[400] !text-center align-middle !text-[1rem]"
+                        onClick={handleSubmit}
+                      >
                         Send
                       </UnstyledButton>
                     </form>
