@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ScrollArea } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -14,16 +15,33 @@ import WeddingWishesSection from '@/components/WeddingWishesSection';
 import GiftSection from '@/components/GiftSection';
 import ApologySection from '@/components/ApologySection';
 import ThankYouSection from '@/components/ThankYouSection';
+import { HttpMessageAdapter } from '@/@core/infra/adapters/http/HttpMessage.adapter';
+import { GetAllMessageUsecase } from '@/@core/domain/usecases/message/Message.usecase';
 // import GallerySection from '@/components/GallerySection';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [data, setData] = useState<any>();
+
+  console.log({ data });
 
   const handleOpen = () => {
     setOpen(true);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    async function loadAPI() {
+      const httpMessageAdapter = new HttpMessageAdapter();
+      const getAllMessageUsecase = new GetAllMessageUsecase(httpMessageAdapter);
+      const response = await getAllMessageUsecase.execute();
+      setData(response);
+      console.log({ response });
+      return response;
+    }
+    if (!data) {
+      loadAPI();
+    }
+  }, [data]);
 
   useEffect(() => {
     if (!open) {

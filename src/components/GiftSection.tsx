@@ -43,7 +43,7 @@ const GiftSection = () => {
             <Box className="relative py-[3rem] px-[2rem] bg-[#9CB29E] rounded-[20px]">
               <Box className="relative w-full text-center mb-[1.25rem]">
                 <Text fz={38} fw={500} c={'white'}>
-                  E-Angpao
+                  E-Gift
                 </Text>
               </Box>
               <Box className="px-[1rem] mb-[1rem]">
