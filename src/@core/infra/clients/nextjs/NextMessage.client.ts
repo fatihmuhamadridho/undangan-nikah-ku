@@ -8,16 +8,16 @@ const prismaMessageAdapter = new PrismaMessageAdapter();
 const getAllMessageUsecase = new GetAllMessageUsecase(prismaMessageAdapter);
 const createMessageUsecase = new CreateMessageUsecase(prismaMessageAdapter);
 
-export async function NextMessageClient(req: NextApiRequest, res: NextApiResponse) {
+export async function NextMessage(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'POST':
-      POSTNextMessageClient(req, res);
+      POSTNextMessage(req, res);
     default:
-      GETNextMessageClient(req, res);
+      GETNextMessage(req, res);
   }
 }
 
-async function GETNextMessageClient(req: NextApiRequest, res: NextApiResponse<ResponseProps<MessageResp[]>>) {
+async function GETNextMessage(req: NextApiRequest, res: NextApiResponse<ResponseProps<MessageResp[]>>) {
   try {
     const { page = 1, limit = 1000, orderBy, orderType } = (req.query as FindManyMessageDTO['query']) || {};
     const query: FindManyMessageDTO['query'] = {
@@ -33,7 +33,7 @@ async function GETNextMessageClient(req: NextApiRequest, res: NextApiResponse<Re
   }
 }
 
-async function POSTNextMessageClient(req: NextApiRequest, res: NextApiResponse<ResponseProps<MessageResp>>) {
+async function POSTNextMessage(req: NextApiRequest, res: NextApiResponse<ResponseProps<MessageResp>>) {
   try {
     const payload: CreateMessageDTO['payload'] = req.body;
     const response = await createMessageUsecase.execute({ payload: payload });

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Text, Textarea, TextInput, UnstyledButton } from '@mantine/core';
 import React from 'react';
 import Flower1Image from './Images/Flower1Image';
@@ -6,20 +5,15 @@ import Flower3Image from './Images/Flower3Image';
 import PalmImage from './Images/PalmImage';
 import PineImage from './Images/PineImage';
 import BgImage from './Images/BgImage';
-import { HttpMessageAdapter } from '@/@core/infra/adapters/http/HttpMessage.adapter';
-import { CreateMessageUsecase } from '@/@core/domain/usecases/message/Message.usecase';
+import { Form, Formik } from 'formik';
 
-const WeddingWishesSection = () => {
-  const httpMessageAdapter = new HttpMessageAdapter();
-  const createMessageUsecase = new CreateMessageUsecase(httpMessageAdapter);
+interface WeddingWishesSectionProps {
+  dataList?: Array<{ username?: string; message?: string }>;
+  OnSubmit?: (values: { username: string; message: string }) => void;
+}
 
-  const handleSubmit = async () => {
-    try {
-      await createMessageUsecase.execute({ payload: { username: 'test', message: 'test' } });
-    } catch (error: any) {
-      alert(error?.message);
-    }
-  };
+const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
+  const { dataList = [], OnSubmit = () => {} } = props;
 
   return (
     <Box className="relative overflow-hidden">
@@ -63,16 +57,30 @@ const WeddingWishesSection = () => {
                     <Text fz={38}>Wedding Wishes</Text>
                   </Box>
                   <Box className="widget-wrapper">
-                    <form action="">
-                      <TextInput label="name" />
-                      <Textarea label="Write your wishes" />
-                      <UnstyledButton
-                        className="!bg-[#4B5B40] !py-[0.65rem] !px-[2rem] !text-white rounded-[50px] mx-auto w-full !font-[400] !text-center align-middle !text-[1rem]"
-                        onClick={handleSubmit}
-                      >
-                        Send
-                      </UnstyledButton>
-                    </form>
+                    <Formik
+                      initialValues={{ username: '', message: '' }}
+                      onSubmit={(values) => {
+                        OnSubmit(values);
+                      }}
+                    >
+                      {({ handleSubmit, handleChange, values }) => (
+                        <Form onSubmit={handleSubmit}>
+                          <TextInput label="name" onChange={handleChange} name="username" value={values.username} />
+                          <Textarea
+                            label="Write your wishes"
+                            onChange={handleChange}
+                            name="message"
+                            value={values.message}
+                          />
+                          <UnstyledButton
+                            className="!bg-[#4B5B40] !py-[0.65rem] !px-[2rem] !text-white rounded-[50px] mx-auto w-full !font-[400] !text-center align-middle !text-[1rem]"
+                            type="submit"
+                          >
+                            Send
+                          </UnstyledButton>
+                        </Form>
+                      )}
+                    </Formik>
                   </Box>
                 </Box>
               </Box>
@@ -91,34 +99,42 @@ const WeddingWishesSection = () => {
             </Box>
           </Box>
         </Box>
-        <Box className="container px-[1.8rem] w-full mx-auto">
-          <Box className="flex flex-wrap justify-center">
-            <Box className="mt-[1rem] w-full" style={{ flex: '0 0 auto' }}>
-              <Box
-                className="relative border-none bg-transparent flex flex-col min-w-0"
-                style={{
-                  wordWrap: 'break-word',
-                  backgroundClip: 'border-box',
-                  borderRadius: '0.25rem',
-                }}
-              >
-                <Box className="overflow-hidden py-[2rem]" style={{ flex: '1 1 auto' }}>
-                  <Box className="block">
-                    <Box className="text-left max-h-[32rem] overflow-auto pr-[1rem] text-black">
-                      <Box className="mb-[1.5rem] grid" style={{ gridTemplateColumns: 'auto 1fr', gap: '1rem' }}>
-                        <Box className="wish-badge bg-white w-[35px] aspect-square flex justify-center items-center rounded-[50px]">
-                          V
-                        </Box>
-                        <Box
-                          className="wish-description p-[1rem] rounded-[5px] relative"
-                          style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
-                        >
-                          <Text fz={'1.17rem'}>Viding</Text>
-                          <Text>Happy Wedding</Text>
-                          <Text fz={12} c={'#6c757d'}>
-                            10 months ago at 13:27
-                          </Text>
-                        </Box>
+        {dataList?.length > 0 && (
+          <Box className="container px-[1.8rem] w-full mx-auto">
+            <Box className="flex flex-wrap justify-center">
+              <Box className="mt-[1rem] w-full" style={{ flex: '0 0 auto' }}>
+                <Box
+                  className="relative border-none bg-transparent flex flex-col min-w-0"
+                  style={{
+                    wordWrap: 'break-word',
+                    backgroundClip: 'border-box',
+                    borderRadius: '0.25rem',
+                  }}
+                >
+                  <Box className="overflow-hidden py-[2rem]" style={{ flex: '1 1 auto' }}>
+                    <Box className="block">
+                      <Box className="text-left max-h-[32rem] overflow-auto pr-[1rem] text-black">
+                        {dataList?.map((item, index) => (
+                          <Box
+                            key={index}
+                            className="mb-[1.5rem] grid"
+                            style={{ gridTemplateColumns: 'auto 1fr', gap: '1rem' }}
+                          >
+                            <Box className="wish-badge bg-white w-[35px] aspect-square flex justify-center items-center rounded-[50px]">
+                              {item?.username?.slice(0, 1).toUpperCase()}
+                            </Box>
+                            <Box
+                              className="wish-description p-[1rem] rounded-[5px] relative"
+                              style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
+                            >
+                              <Text fz={'1.17rem'}>{item?.username}</Text>
+                              <Text>{item?.message}</Text>
+                              <Text fz={12} c={'#6c757d'}>
+                                10 months ago at 13:27
+                              </Text>
+                            </Box>
+                          </Box>
+                        ))}
                       </Box>
                     </Box>
                   </Box>
@@ -126,7 +142,7 @@ const WeddingWishesSection = () => {
               </Box>
             </Box>
           </Box>
-        </Box>
+        )}
       </Box>
     </Box>
   );

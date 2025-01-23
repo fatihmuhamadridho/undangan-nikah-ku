@@ -11,7 +11,7 @@ import {
   MessageResp,
   UpdateMessageDTO,
 } from '@/@core/domain/entities/Message';
-import { GenerateMeta } from '../../utils/generateMeta';
+import { GenerateMeta } from '../../@utils/generateMeta';
 
 export class PrismaMessageAdapter implements MessageRepository {
   async findMany(props?: FindManyMessageDTO): PromiseResponseProps<MessageResp[]> {

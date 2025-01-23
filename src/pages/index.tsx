@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ScrollArea } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -15,29 +14,20 @@ import WeddingWishesSection from '@/components/WeddingWishesSection';
 import GiftSection from '@/components/GiftSection';
 import ApologySection from '@/components/ApologySection';
 import ThankYouSection from '@/components/ThankYouSection';
-import { HttpMessageAdapter } from '@/@core/infra/adapters/http/HttpMessage.adapter';
-import { GetAllMessageUsecase } from '@/@core/domain/usecases/message/Message.usecase';
+import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
 // import GallerySection from '@/components/GallerySection';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [data, setData] = useState<any>();
+  const { data: messageData } = useGetAllMessageSWR();
 
   const handleOpen = () => {
     setOpen(true);
   };
 
-  useEffect(() => {
-    async function loadAPI() {
-      const httpMessageAdapter = new HttpMessageAdapter();
-      const getAllMessageUsecase = new GetAllMessageUsecase(httpMessageAdapter);
-      const response = await getAllMessageUsecase.execute();
-      setData(response);
-    }
-    if (!data) {
-      loadAPI();
-    }
-  }, [data]);
+  const handleSubmitMessage = async (props: { username: string; message: string }) => {
+    await createMessageSWR({ username: props.username, message: props.message });
+  };
 
   useEffect(() => {
     if (!open) {
@@ -94,7 +84,7 @@ const HomePage = () => {
           <OurStorySection />
           {/* <GallerySection /> */}
           <LocationSection />
-          <WeddingWishesSection />
+          <WeddingWishesSection dataList={messageData?.data} OnSubmit={handleSubmitMessage} />
           <GiftSection />
           <ApologySection />
           <ThankYouSection />
