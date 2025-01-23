@@ -23,8 +23,6 @@ const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [data, setData] = useState<any>();
 
-  console.log({ data });
-
   const handleOpen = () => {
     setOpen(true);
   };
@@ -35,8 +33,6 @@ const HomePage = () => {
       const getAllMessageUsecase = new GetAllMessageUsecase(httpMessageAdapter);
       const response = await getAllMessageUsecase.execute();
       setData(response);
-      console.log({ response });
-      return response;
     }
     if (!data) {
       loadAPI();

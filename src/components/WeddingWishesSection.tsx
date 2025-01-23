@@ -15,12 +15,12 @@ const WeddingWishesSection = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await createMessageUsecase.execute({ payload: { username: 'test', message: 'test' } });
-      console.log({ response });
+      await createMessageUsecase.execute({ payload: { username: 'test', message: 'test' } });
     } catch (error: any) {
       alert(error?.message);
     }
   };
+
   return (
     <Box className="relative overflow-hidden">
       <Box className="wishes-wrapper-form relative pt-[3rem]">

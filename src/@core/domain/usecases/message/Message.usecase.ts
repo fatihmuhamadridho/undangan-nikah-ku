@@ -4,8 +4,8 @@ import { CreateMessageDTO, FindManyMessageDTO, MessageResp } from '../../entitie
 
 export class GetAllMessageUsecase implements Usecase<FindManyMessageDTO, PromiseResponseProps<MessageResp[]>> {
   constructor(private messageRepository: MessageRepository) {}
-  execute(props?: FindManyMessageDTO | undefined): PromiseResponseProps<MessageResp[]> {
-    // await this.messageRepository.create();
+  async execute(props?: FindManyMessageDTO | undefined): PromiseResponseProps<MessageResp[]> {
+    // await this.messageRepository.create({ payload: { username: 'test4', message: 'test4' } });
     return this.messageRepository.findMany(props);
   }
 }

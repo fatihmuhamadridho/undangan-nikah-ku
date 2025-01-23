@@ -6,6 +6,7 @@ import { MessageRepository } from '../../../domain/repositories/Message.reposito
 import {
   CreateMessageDTO,
   DeleteMessageDTO,
+  FindManyMessageDTO,
   FindOneMessageDTO,
   MessageResp,
   UpdateMessageDTO,
@@ -13,15 +14,22 @@ import {
 import { GenerateMeta } from '../../utils/generateMeta';
 
 export class PrismaMessageAdapter implements MessageRepository {
-  async findMany(props?: DTOProps): PromiseResponseProps<MessageResp[]> {
-    const { page = 1, limit = 10 } = props?.query || {};
+  async findMany(props?: FindManyMessageDTO): PromiseResponseProps<MessageResp[]> {
+    const {
+      page = 1,
+      limit = 10,
+      orderBy = 'createdAt',
+      orderType = 'desc',
+    } = (props?.query as FindManyMessageDTO['query']) || {};
     const totalData = await prisma.message.count();
     const metaData = new GenerateMeta(totalData, page, limit);
+    const prismaOrderBy = orderBy && orderType ? { [`${orderBy}`]: orderType } : {};
     return prisma.message
       .findMany({
         take: metaData.getLimit(),
         skip: metaData.getOffset(),
         select: { message_id: false, message: true, username: true, createdAt: true, updatedAt: true },
+        orderBy: prismaOrderBy,
       })
       .then(
         (response: MessageResp[]) =>

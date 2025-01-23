@@ -11,6 +11,8 @@ export interface ResponseProps<T> {
   status: boolean;
   meta?: MetaProps;
   data?: T;
+  error?: any;
+  [key: string]: any;
 }
 
 export type PromiseResponseProps<T> = Promise<ResponseProps<T>>;
@@ -33,3 +35,5 @@ export interface DTOProps<
 export interface Usecase<Props = any, Response = any> {
   execute(props?: Props): Response;
 }
+
+export type OrderTypeProps = 'asc' | 'desc';
