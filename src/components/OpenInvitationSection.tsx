@@ -10,12 +10,7 @@ interface OpenInvitationSectionProps {
 const OpenInvitationSection = (props: OpenInvitationSectionProps) => {
   const { handleOpen } = props;
   return (
-    <Flex
-      style={{ position: 'relative', height: '100vh' }}
-      py={80}
-      align={'end'}
-      justify={'center'}
-    >
+    <Flex style={{ position: 'relative', height: '100vh' }} py={80} align={'end'} justify={'center'}>
       <Box
         style={{ position: 'relative', width: '40%', borderRadius: 20, overflow: 'hidden' }}
         px={32}

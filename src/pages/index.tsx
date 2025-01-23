@@ -8,15 +8,26 @@ import OpenInvitationSection from '@/components/OpenInvitationSection';
 import SplashScreen from '@/components/SplashScreen';
 import WelcomeSection from '@/components/WelcomeSection';
 import SaveDateSection from '@/components/SaveDateSection';
+import OurStorySection from '@/components/OurStorySection';
+import LocationSection from '@/components/LocationSection';
+import WeddingWishesSection from '@/components/WeddingWishesSection';
+import GiftSection from '@/components/GiftSection';
+import ApologySection from '@/components/ApologySection';
+import ThankYouSection from '@/components/ThankYouSection';
+import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
+// import GallerySection from '@/components/GallerySection';
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const { data: messageData } = useGetAllMessageSWR();
 
   const handleOpen = () => {
     setOpen(true);
   };
 
-  useEffect(() => {}, []);
+  const handleSubmitMessage = async (props: { username: string; message: string }) => {
+    await createMessageSWR({ username: props.username, message: props.message });
+  };
 
   useEffect(() => {
     if (!open) {
@@ -70,6 +81,13 @@ const HomePage = () => {
         <ScrollArea ml={'auto'} w={{ xs: '100%', md: '39%' }}>
           <WelcomeSection />
           <SaveDateSection />
+          <OurStorySection />
+          {/* <GallerySection /> */}
+          <LocationSection />
+          <WeddingWishesSection dataList={messageData?.data} OnSubmit={handleSubmitMessage} />
+          <GiftSection />
+          <ApologySection />
+          <ThankYouSection />
         </ScrollArea>
         <FooterSection />
       </motion.div>
