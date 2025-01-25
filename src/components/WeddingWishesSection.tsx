@@ -1,5 +1,5 @@
 import { Box, Text, Textarea, TextInput, UnstyledButton } from '@mantine/core';
-import React from 'react';
+import React, { startTransition, useOptimistic } from 'react';
 import Flower1Image from './Images/Flower1Image';
 import Flower3Image from './Images/Flower3Image';
 import PalmImage from './Images/PalmImage';
@@ -7,13 +7,48 @@ import PineImage from './Images/PineImage';
 import BgImage from './Images/BgImage';
 import { Form, Formik } from 'formik';
 
+interface DataListItemProps {
+  username?: string;
+  message?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  sending?: boolean;
+}
+
 interface WeddingWishesSectionProps {
-  dataList?: Array<{ username?: string; message?: string }>;
-  OnSubmit?: (values: { username: string; message: string }) => void;
+  dataList?: DataListItemProps[];
+  OnSubmit?: (values: {
+    username: string;
+    message: string;
+    createdAt: string;
+    updatedAt: string;
+    sending: boolean;
+  }) => Promise<void>;
 }
 
 const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
   const { dataList = [], OnSubmit = () => {} } = props;
+  const [optimisticMessages, addOptimisticMessage] = useOptimistic<DataListItemProps[], DataListItemProps>(
+    dataList,
+    (state, newMessage) => [newMessage, ...state],
+  );
+
+  const handleOptimisticSubmit = async (values: {
+    username: string;
+    message: string;
+    createdAt: string;
+    updatedAt: string;
+    sending: boolean;
+  }) => {
+    startTransition(async () => {
+      try {
+        addOptimisticMessage(values);
+        await OnSubmit(values);
+      } catch (error) {
+        console.error('Failed to send message:', error);
+      }
+    });
+  };
 
   return (
     <Box className="relative overflow-hidden">
@@ -59,8 +94,15 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                   <Box className="widget-wrapper">
                     <Formik
                       initialValues={{ username: '', message: '' }}
-                      onSubmit={(values) => {
-                        OnSubmit(values);
+                      onSubmit={(values, { resetForm }) => {
+                        handleOptimisticSubmit({
+                          username: values.username,
+                          message: values.message,
+                          createdAt: new Date().toISOString(),
+                          updatedAt: new Date().toISOString(),
+                          sending: true,
+                        });
+                        resetForm();
                       }}
                     >
                       {({ handleSubmit, handleChange, values }) => (
@@ -99,7 +141,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
             </Box>
           </Box>
         </Box>
-        {dataList?.length > 0 && (
+        {optimisticMessages?.length > 0 && (
           <Box className="container px-[1.8rem] w-full mx-auto">
             <Box className="flex flex-wrap justify-center">
               <Box className="mt-[1rem] w-full" style={{ flex: '0 0 auto' }}>
@@ -114,7 +156,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                   <Box className="overflow-hidden py-[2rem]" style={{ flex: '1 1 auto' }}>
                     <Box className="block">
                       <Box className="text-left max-h-[32rem] overflow-auto pr-[1rem] text-black">
-                        {dataList?.map((item, index) => (
+                        {optimisticMessages?.map((item, index) => (
                           <Box
                             key={index}
                             className="mb-[1.5rem] grid"
@@ -129,9 +171,16 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                             >
                               <Text fz={'1.17rem'}>{item?.username}</Text>
                               <Text>{item?.message}</Text>
-                              <Text fz={12} c={'#6c757d'}>
-                                10 months ago at 13:27
-                              </Text>
+                              <Box className="flex items-center gap-2">
+                                <Text fz={12} c={'#6c757d'}>
+                                  10 months ago at 13:27
+                                </Text>
+                                {item?.sending && (
+                                  <Text fz={12} c={'#6c757d'}>
+                                    Sending...
+                                  </Text>
+                                )}
+                              </Box>
                             </Box>
                           </Box>
                         ))}

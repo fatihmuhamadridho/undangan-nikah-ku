@@ -17,16 +17,49 @@ import ThankYouSection from '@/components/ThankYouSection';
 import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
 // import GallerySection from '@/components/GallerySection';
 
+interface DataListItemProps {
+  username?: string;
+  message?: string;
+  sending?: boolean;
+}
+
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
   const { data: messageData } = useGetAllMessageSWR();
+  const [optimisticMessages, setOptimisticMessages] = useState<DataListItemProps[]>([]);
+  const allMessages = [...optimisticMessages, ...(messageData?.data || [])];
 
   const handleOpen = () => {
     setOpen(true);
   };
 
-  const handleSubmitMessage = async (props: { username: string; message: string }) => {
-    await createMessageSWR({ username: props.username, message: props.message });
+  const handleSubmitMessage = async (props: {
+    username: string;
+    message: string;
+    createdAt: string;
+    updatedAt: string;
+    sending: boolean;
+  }) => {
+    setOptimisticMessages((prevMessages) => [
+      {
+        username: props.username,
+        message: props.message,
+        createdAt: props.createdAt,
+        updatedAt: props.updatedAt,
+        sending: true,
+      },
+      ...prevMessages,
+    ]);
+    try {
+      await createMessageSWR({ username: props.username, message: props.message });
+      setOptimisticMessages((prevMessages) =>
+        prevMessages.map((msg) =>
+          msg.username === props.username && msg.message === props.message ? { ...msg, sending: false } : msg,
+        ),
+      );
+    } catch (error) {
+      console.error('Error submitting message:', error);
+    }
   };
 
   useEffect(() => {
@@ -84,7 +117,7 @@ const HomePage = () => {
           <OurStorySection />
           {/* <GallerySection /> */}
           <LocationSection />
-          <WeddingWishesSection dataList={messageData?.data} OnSubmit={handleSubmitMessage} />
+          <WeddingWishesSection dataList={allMessages} OnSubmit={handleSubmitMessage} />
           <GiftSection />
           <ApologySection />
           <ThankYouSection />
