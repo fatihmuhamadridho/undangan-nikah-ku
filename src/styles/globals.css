@@ -6,7 +6,7 @@
 
 html,
 body {
-  background-color: #e5f6f3;
+  @apply bg-main;
 }
 
 * {

@@ -8,6 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        main: '#E5F6F3',
+        primary: '#9CB29E',
+        secondary: '#4B5B40',
+        // main: '#f3d0c8',
+        // primary: '#d68a7b',
+        // secondary: '#a74e4a',
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',

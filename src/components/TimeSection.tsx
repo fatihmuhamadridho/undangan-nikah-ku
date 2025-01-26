@@ -3,7 +3,7 @@ import React from 'react';
 
 const TimeSection = () => {
   return (
-    <Center className="" h={'100vh'} bg={'#9CB29E'}>
+    <Center className="!bg-primary" h={'100vh'}>
       TimeSection
     </Center>
   );

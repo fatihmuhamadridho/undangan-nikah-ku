@@ -13,23 +13,52 @@ import UnionVenueImage from './Images/UnionVenueImage';
 import MountainImage from './Images/MountainImage';
 import { IconMapPin } from '@tabler/icons-react';
 import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
 
 const LocationSection = () => {
+  const rotateAnimation: Variants = {
+    animate: {
+      rotate: [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      },
+    },
+  };
+
   return (
     <Box className="relative overflow-hidden">
-      <Box className="venue-section relative bg-[#9CB29E] text-[#ffffff] py-[3rem]">
+      <Box className="venue-section relative !bg-primary text-[#ffffff] py-[3rem]">
         <Box className="relative">
           <Box className="ornaments-wrappe">
             <Box className="orn-1 absolute top-0 left-0 w-[30%]" style={{ transform: 'translate(-65%, -35%)' }}>
               <PineImage />
               <Box className="orn-2 absolute top-[25%] right-[-10%] w-[80%]">
-                <Flower2Image />
+                <motion.div
+                  style={{
+                    transformOrigin: 'bottom center',
+                  }}
+                  variants={rotateAnimation}
+                  animate="animate"
+                >
+                  <Flower2Image />
+                </motion.div>
               </Box>
             </Box>
             <Box className="orn-3 absolute top-0 right-0 w-[30%]" style={{ transform: 'translate(65%, -35%)' }}>
               <PineImage />
               <Box className="orn-4 absolute top-[25%] left-[10%] w-[80%]" style={{ transform: 'rotate(-45deg)' }}>
-                <Flower2Image />
+                <motion.div
+                  style={{
+                    transformOrigin: 'bottom center',
+                  }}
+                  variants={rotateAnimation}
+                  animate="animate"
+                >
+                  <Flower2Image />
+                </motion.div>
               </Box>
             </Box>
           </Box>
@@ -63,7 +92,7 @@ const LocationSection = () => {
               <Box className="flex flex-wrap justify-center gap-[3rem]">
                 <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
                   <Box
-                    className="card bg-[#E5F6F3] text-black border-none text-center rounded-[20px] overflow-hidden relative flex flex-col"
+                    className="card !bg-main text-black border-none text-center rounded-[20px] overflow-hidden relative flex flex-col"
                     style={{ wordWrap: 'break-word', backgroundClip: 'border-box' }}
                   >
                     <Box style={{ flex: '1 1 auto' }}>
@@ -96,13 +125,29 @@ const LocationSection = () => {
                             className="orn-5 absolute top-0 left-0 w-[45%]"
                             style={{ transform: 'translate(-50%, -20%)' }}
                           >
-                            <BranchImage />
+                            <motion.div
+                              style={{
+                                transformOrigin: 'bottom center',
+                              }}
+                              variants={rotateAnimation}
+                              animate="animate"
+                            >
+                              <BranchImage />
+                            </motion.div>
                           </Box>
                           <Box
                             className="orn-6 absolute top-0 right-0 w-[45%]"
                             style={{ transform: 'translate(50%, -20%) scaleX(-1)' }}
                           >
-                            <BranchImage />
+                            <motion.div
+                              style={{
+                                transformOrigin: 'bottom center',
+                              }}
+                              variants={rotateAnimation}
+                              animate="animate"
+                            >
+                              <BranchImage />
+                            </motion.div>
                           </Box>
                           <Box
                             className="orn-7 absolute bottom-[3rem] w-[60%]"
@@ -134,7 +179,15 @@ const LocationSection = () => {
                             className="orn-11 absolute bottom-0 left-0 w-[40%]"
                             style={{ transform: 'translate(-10%, 50%) rotate(-20deg)' }}
                           >
-                            <Flower1Image />
+                            <motion.div
+                              style={{
+                                transformOrigin: 'bottom center',
+                              }}
+                              variants={rotateAnimation}
+                              animate="animate"
+                            >
+                              <Flower1Image />
+                            </motion.div>
                           </Box>
                           <Box
                             className="orn-12 absolute bottom-0 right-0 w-[35%]"
@@ -144,9 +197,25 @@ const LocationSection = () => {
                               className="orn-13 absolute top-[15%] right-[65%] w-[80%]"
                               style={{ transform: 'scaleX(-1)' }}
                             >
-                              <Flower3Image />
+                              <motion.div
+                                style={{
+                                  transformOrigin: 'bottom center',
+                                }}
+                                variants={rotateAnimation}
+                                animate="animate"
+                              >
+                                <Flower3Image />
+                              </motion.div>
                             </Box>
-                            <Flower4Image />
+                            <motion.div
+                              style={{
+                                transformOrigin: 'bottom center',
+                              }}
+                              variants={rotateAnimation}
+                              animate="animate"
+                            >
+                              <Flower4Image />
+                            </motion.div>
                           </Box>
                         </Box>
                         <Box className="union relative w-full">
@@ -173,7 +242,7 @@ const LocationSection = () => {
                               <Divider className="w-[45px] mt-[0.rem] mb-[0.5rem] mx-auto" color="black" />
                             </Box>
                             <Text fz={18}>Februari 2025</Text>
-                            <Text fz={18}>09:00 - 22.00</Text>
+                            <Text fz={18}>09:00 - 21.00</Text>
                           </Box>
                         </Box>
                       </Box>
@@ -213,7 +282,7 @@ const LocationSection = () => {
                           </Box>
                           <Box className="relative w-full" mt={{ base: 32, sm: 24 }}>
                             <UnstyledButton
-                              className="!bg-[#4B5B40] !text-white !py-[0.65rem] !px-[2rem] mx-auto rounded-[50px]"
+                              className="!bg-secondary !text-white !py-[0.65rem] !px-[2rem] mx-auto rounded-[50px]"
                               fz={16}
                               fw={400}
                               component={Link}

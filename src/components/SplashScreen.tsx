@@ -34,7 +34,7 @@ const SplashScreen = () => {
   };
 
   return (
-    <Box style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0 }} bg={'#e5f6f3'}>
+    <Box className="!bg-main" style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0 }}>
       {/* background */}
       <Box
         style={{
