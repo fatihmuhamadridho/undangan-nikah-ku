@@ -5715,6 +5715,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-seo@npm:^6.6.0":
+  version: 6.6.0
+  resolution: "next-seo@npm:6.6.0"
+  peerDependencies:
+    next: ^8.1.1-canary.54 || >=9.0.0
+    react: ">=16.0.0"
+    react-dom: ">=16.0.0"
+  checksum: 10c0/60eff5b6fdd83306d26968dfc23b5df502bf014b771b0910bf6cfec944de6f262d7d872ae3155717a31a1dd51ae48db007ce4c0f78f8b435deff37bdc63beb76
+  languageName: node
+  linkType: hard
+
 "next@npm:15.1.2":
   version: 15.1.2
   resolution: "next@npm:15.1.2"
@@ -7726,6 +7737,7 @@ __metadata:
     moment: "npm:^2.30.1"
     motion: "npm:^11.15.0"
     next: "npm:15.1.2"
+    next-seo: "npm:^6.6.0"
     postcss: "npm:^8.4.49"
     postcss-preset-mantine: "npm:^1.17.0"
     postcss-simple-vars: "npm:^7.0.1"
