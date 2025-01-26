@@ -1,7 +1,6 @@
 import { Box, Flex, Stack, Text } from '@mantine/core';
 import React from 'react';
 import FrameImage from './Images/FrameImage';
-import { IconChevronsDown } from '@tabler/icons-react';
 import MountainImage from './Images/MountainImage';
 import BgImage from './Images/BgImage';
 import BranchImage from './Images/BranchImage';
@@ -119,20 +118,22 @@ const WelcomeSection = () => {
               gap={16}
             >
               <Box>
-                <Text fz={46} lh={1.2}>
-                  Fatih
+                <Text className="!font-gallery" fz={{ base: 42, sm: 46 }} lh={1.2}>
+                  Tirta
                 </Text>
-                <Text fz={26} lh={1.2}>
+                <Text className="!font-gallery" fz={20} lh={1.2}>
                   &
                 </Text>
-                <Text fz={46} lh={1.2}>
-                  Tirta
+                <Text className="!font-gallery" fz={{ base: 42, sm: 46 }} lh={1.2}>
+                  Fatih
                 </Text>
               </Box>
               <Box>
-                <Text fz={'14pt'}>Our Wedding Day</Text>
+                <Text className="font-milyuna" fz={{ base: 14, sm: 16 }}>
+                  By the love and grace of God, we cordially invite you to celebrate our special day
+                </Text>
               </Box>
-              <IconChevronsDown size={56} />
+              {/* <IconChevronsDown size={56} /> */}
             </Stack>
           </Box>
         </Box>

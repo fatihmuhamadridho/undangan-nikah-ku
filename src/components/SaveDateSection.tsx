@@ -1,5 +1,5 @@
 import { Box, Flex, Text, UnstyledButton } from '@mantine/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MountainImage from './Images/MountainImage';
 import Image from 'next/image';
 import UnionImage from './Images/UnionImage';
@@ -9,9 +9,38 @@ import Flower3Image from './Images/Flower3Image';
 import Flower2Image from './Images/Flower2Image';
 import Flower1Image from './Images/Flower1Image';
 import CloudImage from './Images/CloudImage';
-import { IconBrandInstagram } from '@tabler/icons-react';
+import { IconCalendarHeart } from '@tabler/icons-react';
+import moment from 'moment';
+
+const calculateTimeLeft = () => {
+  const weddingDate = moment('2025-02-09T09:00:00');
+  const now = moment();
+  const duration = moment.duration(weddingDate.diff(now));
+  return {
+    days: Math.floor(duration.asDays()),
+    hours: duration.hours(),
+    minutes: duration.minutes(),
+    seconds: duration.seconds(),
+  };
+};
 
 const SaveDateSection = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <Box className="relative pb-[3rem] overflow-hidden" bg={'#9CB29E'}>
       <Box className="relative w-full" pt={80} pb={48}>
@@ -41,10 +70,10 @@ const SaveDateSection = () => {
                         maskSize: '100% 100%',
                         maskRepeat: 'no-repeat',
                       }}
-                      src={'/images/background-2.webp'}
-                      alt="background-2"
-                      width={1439}
-                      height={1080}
+                      src={'/images/gallery3/berdua.webp'}
+                      alt="berdua"
+                      width={1600}
+                      height={1066}
                     />
                   </Box>
                   <Box className="absolute inset-0">
@@ -106,12 +135,37 @@ const SaveDateSection = () => {
                 </Box>
               </Box>
               <Box className="reminder-content relative mt-[1rem]">
-                <Box className="flex text-center justify-center relative min-w-[80%] w-fit gap-[1.5rem] mx-auto">
-                  <Text>105</Text>
-                  <Text>105</Text>
-                  <Text>105</Text>
+                <Box className="countdown flex text-center justify-center relative min-w-[80%] w-fit gap-[1.5rem] mx-auto">
+                  <Box className="flex flex-col justify-center items-center relative">
+                    <Text className="font-gallery" fz={36}>
+                      {timeLeft.days}
+                    </Text>
+                    <Text fz={14}>Days</Text>
+                  </Box>
+                  <Box className="flex flex-col justify-center items-center relative">
+                    <Text className="font-gallery" fz={36}>
+                      {timeLeft.hours}
+                    </Text>
+                    <Text fz={14}>Hours</Text>
+                  </Box>
+                  <Box className="flex flex-col justify-center items-center relative">
+                    <Text className="font-gallery" fz={36}>
+                      {timeLeft.minutes}
+                    </Text>
+                    <Text fz={14}>Minutes</Text>
+                  </Box>
+                  <Box className="flex flex-col justify-center items-center relative">
+                    <Text className="font-gallery" fz={36}>
+                      {timeLeft.seconds}
+                    </Text>
+                    <Text fz={14}>Seconds</Text>
+                  </Box>
                 </Box>
-                <UnstyledButton className="mx-auto mt-[1.5rem] flex items-center relative gap-[0.5rem]">
+                <UnstyledButton
+                  className="mx-auto mt-[1.5rem] flex items-center relative gap-[0.5rem] !bg-[#4B5B40] rounded-[200px]"
+                  style={{ padding: '0.65rem 2rem', color: 'white' }}
+                >
+                  <IconCalendarHeart size={20} />
                   Save the Date
                 </UnstyledButton>
               </Box>
@@ -132,7 +186,7 @@ const SaveDateSection = () => {
                     <CloudImage />
                   </Box>
                 </Box>
-                <Box className="relative w-full text-center mb-[1.25rem]">Bride & Groom</Box>
+                {/* <Box className="relative w-full text-center mb-[1.25rem]">Bride & Groom</Box> */}
                 <Box className="relative">
                   Kami adalah sepasang manusia yang sedang berbahagia. Kami mengundang Bapak/Ibu/Saudara sekalian untuk
                   menghadiri hari bahagia kami. Ini adalah kami
@@ -188,10 +242,10 @@ const SaveDateSection = () => {
                           maskSize: '100% 100%',
                           maskRepeat: 'no-repeat',
                         }}
-                        src={'/images/mempelai-1.webp'}
-                        alt="mempelai-1.webp"
-                        width={404}
-                        height={599}
+                        src={'/images/gallery3/pria.webp'}
+                        alt="pria.webp"
+                        width={1600}
+                        height={1066}
                       />
                     </Box>
                     <Box className="ornaments-wrapper absolute inset-0">
@@ -207,22 +261,34 @@ const SaveDateSection = () => {
                   </Box>
                 </Box>
                 <Box className="couple-description relative text-center px-4 pt-4">
-                  <Text className="mt-2">Vidi Dwi Saputra</Text>
+                  <Text className="mt-2 font-against" fz={20}>
+                    Fatih Muhamad Ridho
+                  </Text>
                   <Box className="mt-2">
-                    <Text>Precious Son of</Text>
+                    <Text className="font-milyuna" fz={16}>
+                      Precious Son of
+                    </Text>
                     <Box>
-                      <Text>Tjipto Gunawan</Text>
-                      <Text>&</Text>
-                      <Text>Felicia Susanto</Text>
+                      <Text fz={16} fw={500}>
+                        Ridwan
+                      </Text>
+                      <Text fz={16} fw={500}>
+                        &
+                      </Text>
+                      <Text fz={16} fw={500}>
+                        Eti Suryanih
+                      </Text>
                     </Box>
                   </Box>
-                  <Box className="relative w-fit max-w-full px-[0.6rem] py-[0.5rem] rounded-[50px] bg-[#4B5B40] mt-4 mx-auto">
+                  {/* <Box className="relative w-fit max-w-full px-[0.6rem] py-[0.5rem] rounded-[50px] bg-[#4B5B40] mt-4 mx-auto">
                     <IconBrandInstagram color="white" />
-                  </Box>
+                  </Box> */}
                 </Box>
               </Box>
             </Box>
-            <Box className="and relative flex justify-center items-center w-full py-[2rem]">&</Box>
+            <Box className="and relative flex justify-center items-center w-full py-[2rem] font-gallery" fz={28}>
+              &
+            </Box>
             <Box className="w-full" style={{ flex: '0 0 auto' }}>
               <Box className="couple relative">
                 <Box className="ornaments-wrapper absolute inset-0">
@@ -268,10 +334,10 @@ const SaveDateSection = () => {
                           maskSize: '100% 100%',
                           maskRepeat: 'no-repeat',
                         }}
-                        src={'/images/mempelai-1.webp'}
-                        alt="mempelai-1.webp"
-                        width={404}
-                        height={599}
+                        src={'/images/gallery3/wanita.webp'}
+                        alt="wanita.webp"
+                        width={1066}
+                        height={1600}
                       />
                     </Box>
                     <Box className="ornaments-wrapper absolute inset-0">
@@ -287,18 +353,28 @@ const SaveDateSection = () => {
                   </Box>
                 </Box>
                 <Box className="couple-description relative text-center px-4 pt-4">
-                  <Text className="mt-2">Vidi Dwi Saputra</Text>
+                  <Text className="mt-2 font-against" fz={20}>
+                    Tirta Puspitasari
+                  </Text>
                   <Box className="mt-2">
-                    <Text>Precious Son of</Text>
+                    <Text className="font-milyuna" fz={16}>
+                      Precious Son of
+                    </Text>
                     <Box>
-                      <Text>Tjipto Gunawan</Text>
-                      <Text>&</Text>
-                      <Text>Felicia Susanto</Text>
+                      <Text fz={16} fw={500}>
+                        Suryanto
+                      </Text>
+                      <Text fz={16} fw={500}>
+                        &
+                      </Text>
+                      <Text fz={16} fw={500}>
+                        Herlina
+                      </Text>
                     </Box>
                   </Box>
-                  <Box className="relative w-fit max-w-full px-[0.6rem] py-[0.5rem] rounded-[50px] bg-[#4B5B40] mt-4 mx-auto">
+                  {/* <Box className="relative w-fit max-w-full px-[0.6rem] py-[0.5rem] rounded-[50px] bg-[#4B5B40] mt-4 mx-auto">
                     <IconBrandInstagram color="white" />
-                  </Box>
+                  </Box> */}
                 </Box>
               </Box>
             </Box>
