@@ -16,6 +16,7 @@ import ApologySection from '@/components/ApologySection';
 import ThankYouSection from '@/components/ThankYouSection';
 import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
 import dynamic from 'next/dynamic';
+import { NextSeo } from 'next-seo';
 
 const AutoplayAudio = dynamic(() => import('@/components/AutoplayAudio'), { ssr: true });
 
@@ -86,6 +87,22 @@ const HomePage = () => {
       <Head>
         <title>Tirta dan Fatih - Wedding Invitation</title>
       </Head>
+      <NextSeo
+        description={'By the love and grace of God, we cordially invite you to celebrate our special day'}
+        openGraph={{
+          description: 'Tirta dan Fatih - Wedding Invitation',
+          images: [
+            {
+              url: '/images/gallery3/berdua_2.webp',
+            },
+          ],
+          title: 'Tirta dan Fatih - Wedding Invitation',
+          url: `https://undangan-nikah-ku.vercel.app/`,
+        }}
+        title={`Tirta dan Fatih - Wedding Invitation`}
+        titleTemplate={`Tirta dan Fatih - Wedding Invitation`}
+        twitter={{ cardType: 'summary_large_image', handle: 'undangan-nikah-ku', site: 'undangan-nikah-ku' }}
+      />
       <AutoplayAudio isPlaying={isPlayingAudio} handleToggleAudio={handleToggleAudio} />
       <motion.div
         style={{
