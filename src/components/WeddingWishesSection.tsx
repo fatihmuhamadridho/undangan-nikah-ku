@@ -100,7 +100,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                   borderRadius: '0.25rem',
                 }}
               >
-                <Box className="px-[2rem] pb-[2rem]" style={{ flex: '1 1 auto' }}>
+                <Box className="pb-[2rem]" px={{ base: 4, sm: 32 }} style={{ flex: '1 1 auto' }}>
                   <Box className="title-section relative w-full text-center">
                     <Text className="font-brillion" fz={58}>
                       Wedding Wishes
@@ -127,6 +127,13 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                             label="Name"
                             onChange={handleChange}
                             name="username"
+                            onBlur={() => document.getElementsByName('message')[0]?.focus()}
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter') {
+                                e.preventDefault();
+                                document.getElementsByName('message')[0]?.focus();
+                              }
+                            }}
                             value={values.username}
                           />
                           <Textarea
@@ -165,7 +172,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
           </Box>
         </Box>
         {optimisticMessages?.length > 0 && (
-          <Box className="container px-[1.8rem] w-full mx-auto">
+          <Box className="container w-full mx-auto" px={{ base: 16, sm: '1.8rem' }}>
             <Box className="flex flex-wrap justify-center">
               <Box className="mt-[1rem] w-full" style={{ flex: '0 0 auto' }}>
                 <Box

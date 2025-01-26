@@ -202,7 +202,7 @@ const LocationSection = () => {
                             <IconClothesRackOff className="justify-self-center" size={56} />
                             <Box>No White Dress</Box>
                           </Box> */}
-                          <Box className="relative my-[1rem]">
+                          <Box className="relative my-[1rem] w-max mx-auto">
                             <IconMapPin className="justify-self-center" size={40} />
                           </Box>
                           <Text className="!pb-[1rem]" fz={24}>

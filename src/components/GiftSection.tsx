@@ -21,6 +21,16 @@ const GiftSection = () => {
     },
   ];
 
+  const handleCopyText = (text: string) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Text copied to clipboard!');
+  };
+
   return (
     <Box className="relative text-center py-[3rem] overflow-hidden">
       <Box className="ornaments-wrapper absolute inset-0">
@@ -167,6 +177,7 @@ const GiftSection = () => {
                       </Box>
                       <UnstyledButton
                         className="z-10 !py-[0.25rem] !px-[0.5rem] !bg-[#4B5B40] !text-white rounded-[4px]"
+                        onClick={() => handleCopyText(item.target)}
                         fz={12}
                       >
                         Salin
