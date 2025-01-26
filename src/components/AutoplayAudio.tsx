@@ -20,7 +20,10 @@ const AutoplayAudio = () => {
   return (
     <div className="hidden">
       <audio ref={audioRef} loop>
-        <source src="/music/supercell%20-%20Today%20Is%20A%20Beautiful%20Day%20-%2001.mp3" type="audio/mp3" />
+        <source
+          src="/music/Siblings Singing 'Carpenters - Close to you'ㅣ친남매가 부르는 'Carpenters - Close to you'.mp3"
+          type="audio/mp3"
+        />
         Your browser does not support the audio element.
       </audio>
     </div>

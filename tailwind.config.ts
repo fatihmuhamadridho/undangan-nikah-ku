@@ -12,6 +12,12 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      fontFamily: {
+        nunito: ['Nunito Sans', 'sans-serif'],
+        against: ['against'],
+        milyuna: ['milyuna'],
+        gallery: ['gallery', 'serif'],
+      },
     },
   },
   plugins: [],

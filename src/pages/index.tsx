@@ -15,6 +15,7 @@ import GiftSection from '@/components/GiftSection';
 import ApologySection from '@/components/ApologySection';
 import ThankYouSection from '@/components/ThankYouSection';
 import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
+import AutoplayAudio from '@/components/AutoplayAudio';
 // import GallerySection from '@/components/GallerySection';
 
 interface DataListItemProps {
@@ -78,7 +79,7 @@ const HomePage = () => {
       <Head>
         <title>Fatih dan Tirta - Wedding Invitation</title>
       </Head>
-      {/* <AutoplayAudio /> */}
+      <AutoplayAudio />
       <motion.div
         style={{
           position: 'absolute',
