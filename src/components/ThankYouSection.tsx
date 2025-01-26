@@ -104,10 +104,10 @@ const ThankYouSection = () => {
                 <Box className="pt-[125%] relative w-full h-auto">
                   <Image
                     className="absolute top-0 left-0 w-full h-full"
-                    src={'/images/gallery3/berdua.webp'}
-                    alt="berdua"
-                    width={1600}
-                    height={1066}
+                    src={'/images/gallery3/bg.webp'}
+                    alt="bg"
+                    width={1066}
+                    height={1600}
                     style={{
                       objectFit: 'cover',
                       maskImage: "url('/images/mask.png')",
@@ -116,6 +116,7 @@ const ThankYouSection = () => {
                       maskRepeat: 'no-repeat',
                       overflowClipMargin: 'content-box',
                       overflow: 'clip',
+                      objectPosition: 'calc(50% - 10px) center',
                     }}
                   />
                 </Box>
@@ -142,7 +143,9 @@ const ThankYouSection = () => {
             <Box className="thank relative py-[3rem] px-[2rem] mb-[5rem] text-black before:absolute before:inset-0 before:bg-white before:rounded-[300px] before:opacity-[0.2] before:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:rounded-[300px] after:opacity-[0.6] after:content-[''] after:shadow-[0_0_1rem_rgba(0,0,0,0)]">
               <Box className="pt-[2rem]">
                 <Box className="title-section relative w-full text-center mb-[1.25rem]">
-                  <Text fz={38}>Thank You</Text>
+                  <Text className="font-gallery" fz={38}>
+                    Thank You
+                  </Text>
                 </Box>
                 <Box className="relative">
                   Kami mengucapkan terimakasih kepada Bapak/Ibu/Saudara yang telah menghadiri seluruh rangkaian acara

@@ -50,14 +50,17 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
     updatedAt: string;
     sending: boolean;
   }) => {
-    startTransition(async () => {
-      try {
-        addOptimisticMessage(values);
-        await OnSubmit(values);
-      } catch (error) {
-        console.error('Failed to send message:', error);
-      }
-    });
+    if (values.username !== '' && values.message !== '') {
+      startTransition(async () => {
+        try {
+          addOptimisticMessage(values);
+          await OnSubmit(values);
+        } catch (error) {
+          console.error('Failed to send message:', error);
+        }
+      });
+    }
+    return;
   };
 
   return (
@@ -86,7 +89,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
             <PineImage />
           </Box>
         </Box>
-        <Box className="container relative mx-auto">
+        <Box className="container relative px-[28px] mx-auto">
           <Box className="flex flex-wrap justify-center">
             <Box className="z-[3] relative w-full" style={{ flex: '0 0 auto' }}>
               <Box
@@ -98,8 +101,10 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                 }}
               >
                 <Box className="px-[2rem] pb-[2rem]" style={{ flex: '1 1 auto' }}>
-                  <Box className="title-section relative w-full text-center mb-[1.25rem]">
-                    <Text fz={38}>Wedding Wishes</Text>
+                  <Box className="title-section relative w-full text-center">
+                    <Text className="font-brillion" fz={58}>
+                      Wedding Wishes
+                    </Text>
                   </Box>
                   <Box className="widget-wrapper">
                     <Formik
@@ -117,8 +122,15 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                     >
                       {({ handleSubmit, handleChange, values }) => (
                         <Form onSubmit={handleSubmit}>
-                          <TextInput label="name" onChange={handleChange} name="username" value={values.username} />
+                          <TextInput
+                            className="!mb-4"
+                            label="Name"
+                            onChange={handleChange}
+                            name="username"
+                            value={values.username}
+                          />
                           <Textarea
+                            className="!mb-4"
                             label="Write your wishes"
                             onChange={handleChange}
                             maxLength={300}
@@ -173,14 +185,16 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                             className="mb-[1.5rem] grid"
                             style={{ gridTemplateColumns: 'auto 1fr', gap: '1rem' }}
                           >
-                            <Box className="wish-badge bg-white w-[35px] aspect-square flex justify-center items-center rounded-[50px]">
+                            <Box className="wish-badge bg-white w-[35px] aspect-square flex justify-center items-center rounded-[50px] font-[500]">
                               {item?.username?.slice(0, 1).toUpperCase()}
                             </Box>
                             <Box
                               className="wish-description p-[1rem] rounded-[5px] relative"
                               style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
                             >
-                              <Text fz={'1.17rem'}>{item?.username}</Text>
+                              <Text fz={'1.17rem'} fw={700}>
+                                {item?.username}
+                              </Text>
                               <Text>{item?.message}</Text>
                               <Box className="flex items-center gap-2">
                                 <Text fz={12} c={'#6c757d'}>

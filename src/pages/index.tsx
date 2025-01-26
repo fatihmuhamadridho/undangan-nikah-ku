@@ -98,7 +98,7 @@ const HomePage = () => {
           overflow: 'hidden',
         }}
         initial={{ y: 0 }}
-        animate={open ? { y: '-100%' } : { y: 0 }}
+        animate={open ? { y: '-120%' } : { y: 0 }}
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
         <SplashScreen />

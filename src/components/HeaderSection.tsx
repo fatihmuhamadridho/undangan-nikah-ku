@@ -15,7 +15,10 @@ const HeaderSection = () => {
     <Box className="fixed inset-0 block overflow-hidden" w={'61%'} h={'100vh'} visibleFrom="md">
       <Box
         className={`absolute inset-0 w-full h-full top-0 left-0 bg-cover`}
-        style={{ backgroundPosition: 'center', backgroundImage: `url(${BACKGROUND_IMAGE})` }}
+        style={{
+          backgroundPosition: 'calc(50% - 24px) center',
+          backgroundImage: `url(${BACKGROUND_IMAGE})`,
+        }}
       />
       <Box className="absolute inset-0 w-full h-full top-0 left-0 bg-cover bg-black/30"></Box>
       <Box className="absolute inset-0">

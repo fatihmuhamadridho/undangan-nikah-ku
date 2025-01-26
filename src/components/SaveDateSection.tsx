@@ -11,6 +11,7 @@ import Flower1Image from './Images/Flower1Image';
 import CloudImage from './Images/CloudImage';
 import { IconCalendarHeart } from '@tabler/icons-react';
 import moment from 'moment';
+import Link from 'next/link';
 
 const calculateTimeLeft = () => {
   const weddingDate = moment('2025-02-09T09:00:00');
@@ -69,6 +70,7 @@ const SaveDateSection = () => {
                         maskPosition: '50% 50%',
                         maskSize: '100% 100%',
                         maskRepeat: 'no-repeat',
+                        objectPosition: 'calc(50% - 20px) center',
                       }}
                       src={'/images/gallery3/berdua.webp'}
                       alt="berdua"
@@ -162,8 +164,13 @@ const SaveDateSection = () => {
                   </Box>
                 </Box>
                 <UnstyledButton
-                  className="mx-auto mt-[1.5rem] flex items-center relative gap-[0.5rem] !bg-[#4B5B40] rounded-[200px]"
+                  className="mx-auto mt-[1.5rem] w-max flex items-center relative gap-[0.5rem] !bg-[#4B5B40] rounded-[200px]"
                   style={{ padding: '0.65rem 2rem', color: 'white' }}
+                  component={Link}
+                  href={
+                    'https://www.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Tirta+%26+Fatih&details=Visit+the+invitation+here%0Ahttps%3A%2F%2Fundangan-nikah-ku.vercel.app%2F&location=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FJalan%2BKh.%2BHasim%2BAsyari%2BNo.7%2C%2BRT.002%252FRW.005%2C%2BSudimara%2BPinang%2C%2BKec.%2BPinang%2C%2BKota%2BTangerang%2C%2BBanten%2B15145%2F%40-6.2246119%2C106.6918511%2C19.55z%2Fdata%3D%214m6%213m5%211s0x2e69fa26e7c9038d%3A0xea43bb7c1205826d%218m2%213d-6.2246901%214d106.6923552%2116s%252Fg%252F11fphw_656%3Fentry%3Dtts%26g_ep%3DEgoyMDI1MDEyMi4wIPu8ASoASAFQAw%253D%253D&dates=20250209T020000Z%2F20250209T150000Z'
+                  }
+                  target="__blank"
                 >
                   <IconCalendarHeart size={20} />
                   Save the Date
@@ -266,7 +273,7 @@ const SaveDateSection = () => {
                   </Text>
                   <Box className="mt-2">
                     <Text className="font-milyuna" fz={16}>
-                      Precious Son of
+                      Precious Second Child of
                     </Text>
                     <Box>
                       <Text fz={16} fw={500}>
@@ -358,7 +365,7 @@ const SaveDateSection = () => {
                   </Text>
                   <Box className="mt-2">
                     <Text className="font-milyuna" fz={16}>
-                      Precious Son of
+                      Precious First Child of
                     </Text>
                     <Box>
                       <Text fz={16} fw={500}>
