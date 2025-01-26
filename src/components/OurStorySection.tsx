@@ -38,33 +38,35 @@ const OurStorySection = () => {
               <Box className="pt-[125%] relative w-full h-auto">
                 <Image
                   className="object-cover rounded-[300px] absolute top-0 left-0 w-full h-full"
-                  src={'/images/gallery3/berdua.webp'}
-                  alt="berdua"
+                  style={{ objectPosition: 'left center' }}
+                  src={'/images/gallery3/berdua_2.webp'}
+                  alt="berdua_2"
                   width={1600}
                   height={1066}
                 />
               </Box>
             </Box>
             <Box className="story-description">
-              <Box className="relative w-full text-center font-brillion" fz={42}>
+              <Box className="relative w-full text-center font-brillion" mb={16} fz={42}>
                 Our Story
               </Box>
-              <Box className="relative italic text-center">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam esse officiis nam nesciunt quam atque
-                aliquid deserunt dolores tempora eum laboriosam ut fugiat, dolorem, totam fuga perferendis eos vitae
-                asperiores quo tempore odit harum doloremque exercitationem praesentium! Laborum dolores deserunt itaque
-                nesciunt quam? Facilis blanditiis beatae veniam delectus iusto necessitatibus ipsum, illum ipsa sit
-                consectetur cupiditate quibusdam dignissimos cum dolore, quam impedit mollitia, sapiente distinctio
-                dolorum tenetur neque praesentium? Inventore obcaecati facilis eos ipsum magni incidunt reprehenderit
-                modi animi, odit aspernatur ratione molestias beatae quis dolore culpa ex? Animi voluptates non hic
-                dolorum atque aliquid ducimus sint quo recusandae aut quasi et ratione consequuntur illum voluptas, eius
-                praesentium molestiae odit assumenda harum porro at! Ratione veniam libero repudiandae excepturi
-                laboriosam voluptas beatae harum, quia voluptatum corporis. Harum vel excepturi atque animi! Rerum
-                deleniti harum vero, doloremque, in itaque vel aut laborum, porro debitis exercitationem consequuntur
-                officia dolor. Eum nam ad voluptatum earum ratione vitae optio debitis corrupti quasi? Labore enim harum
-                sapiente excepturi sed, obcaecati alias nobis. Necessitatibus quaerat atque mollitia voluptatum neque
-                nostrum alias nisi, dolore fugit facilis cum sequi corrupti beatae ad dignissimos dolorem non error
-                veritatis vitae rem quam veniam. Explicabo voluptatibus at distinctio expedita nemo autem!
+              <Box className="relative italic text-center font-milyuna" mb={14} fz={14}>
+                Perjalanan kami dimulai pada Oktober 2018, dari pertemuan sederhana sebagai kakak dan adik kelas di SMA.
+                Sebuah salam yang dititipkan melalui teman menjadi awal dari kisah kami yang penuh makna.
+              </Box>
+              <Box className="relative italic text-center font-milyuna" mb={14} fz={14}>
+                Desember 2020, benih cinta mulai tumbuh. Kami mulai saling mengenal lebih dalam, berbagi cerita, dan
+                merasa nyaman melangkah bersama. Kebersamaan kami semakin erat, membawa kami ke perjalanan yang penuh
+                warna.
+              </Box>
+              <Box className="relative italic text-center font-milyuna" mb={14} fz={14}>
+                Pada Desember 2024, dengan restu kedua orang tua, ikatan kami dipertegas melalui lamaran yang penuh haru
+                dan doa. Momen yang telah lama dinantikan akhirnya tiba, membawa kami ke langkah yang lebih serius.
+              </Box>
+              <Box className="relative italic text-center font-milyuna" mb={14} fz={14}>
+                Dan kini, Februari 2025, tibalah waktunya untuk kami mengikat janji suci dalam ikatan pernikahan,
+                menjadi sepasang suami istri. Sebuah babak baru yang siap kami jalani bersama, dengan cinta dan doa yang
+                senantiasa menyertai.
               </Box>
             </Box>
           </Box>

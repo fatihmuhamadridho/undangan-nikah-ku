@@ -12,6 +12,21 @@ const AutoplayAudio = (props: AutoplayAudioProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden && audioRef.current) {
+        audioRef.current.pause();
+        handleToggleAudio(false);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [handleToggleAudio]);
+
+  useEffect(() => {
     if (isPlaying && audioRef.current) {
       audioRef.current.play().catch((err) => {
         console.log('Play failed: ', err);
@@ -36,7 +51,7 @@ const AutoplayAudio = (props: AutoplayAudioProps) => {
   };
 
   return (
-    <Box className="bottom-0 right-0 z-20 p-0 m-[1.5rem] fixed flex">
+    <Box className="bottom-0 right-0 z-[60] p-0 m-[1.5rem] fixed flex">
       <audio ref={audioRef} loop>
         <source
           src="/music/Siblings Singing 'Carpenters - Close to you'ㅣ친남매가 부르는 'Carpenters - Close to you'.mp3"

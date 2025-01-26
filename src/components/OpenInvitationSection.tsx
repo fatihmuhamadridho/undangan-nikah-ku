@@ -1,6 +1,6 @@
 import { Box, Flex, Text, UnstyledButton } from '@mantine/core';
 import { IconMailOpened } from '@tabler/icons-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MountainImage from './Images/MountainImage';
 
 interface OpenInvitationSectionProps {
@@ -9,9 +9,22 @@ interface OpenInvitationSectionProps {
 
 const OpenInvitationSection = (props: OpenInvitationSectionProps) => {
   const { handleOpen } = props;
+  const [userAgent, setUserAgent] = useState<string>('');
+  const [height, setHeight] = useState<string>('100vh');
+
+  useEffect(() => {
+    if (userAgent === '') {
+      const target = navigator.userAgent;
+      setUserAgent(target);
+      if (/iphone/i.test(target)) {
+        setHeight('85vh');
+      }
+    }
+  }, [userAgent]);
+
   return (
     <Box className="px-[1.8rem]">
-      <Flex style={{ position: 'relative', height: '100vh' }} py={80} align={'end'} justify={'center'}>
+      <Flex style={{ position: 'relative', height: height }} py={80} align={'end'} justify={'center'}>
         <Box
           style={{ position: 'relative', borderRadius: 20, overflow: 'hidden' }}
           w={{ lg: '40%', xs: '60%', base: '100%' }}

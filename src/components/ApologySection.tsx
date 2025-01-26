@@ -51,14 +51,16 @@ const ApologySection = () => {
           <Box className="text-center relative w-full" style={{ flex: '0 0 auto' }}>
             <Box className="relative">
               <Box className="title-section has-animate">
-                <Text fz={38}>Apology</Text>
+                <Text className="font-gallery" fz={38} mb={20}>
+                  Apology
+                </Text>
               </Box>
               <Box className="w-[92%] mx-auto">
-                <Text>
+                <Text fz={14} mb={16}>
                   Tanpa mengurangi rasa hormat, Izinkan kami mengharapkan kehadiran Bapak/lbu/Saudara/i melalui undangan
                   digital ini, serta dapat memberikan doa restu kepada kami.
                 </Text>
-                <Text>Terima kasih.</Text>
+                <Text fz={14}>Terima kasih.</Text>
               </Box>
             </Box>
           </Box>

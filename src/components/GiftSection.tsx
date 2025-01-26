@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Text, UnstyledButton } from '@mantine/core';
 import React from 'react';
 import PalmImage from './Images/PalmImage';
@@ -7,6 +6,31 @@ import Flower1Image from './Images/Flower1Image';
 import Image from 'next/image';
 
 const GiftSection = () => {
+  const LIST_GIFT_PROVIDER = [
+    {
+      provider: 'BANK BCA',
+      target: '6565280655',
+      owner: 'Tirta Puspitasari',
+      icon: '/images/logo-bca.png',
+    },
+    {
+      provider: 'BANK PERMATA',
+      target: '009931536394',
+      owner: 'Fatih Muhamad Ridho',
+      icon: '/images/logo-permata.png',
+    },
+  ];
+
+  const handleCopyText = (text: string) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Text copied to clipboard!');
+  };
+
   return (
     <Box className="relative text-center py-[3rem] overflow-hidden">
       <Box className="ornaments-wrapper absolute inset-0">
@@ -31,24 +55,24 @@ const GiftSection = () => {
           <Flower1Image />
         </Box>
       </Box>
-      <Box className="container px-[1.8rem] mx-auto">
+      <Box className="container mx-auto" px={{ base: '1rem', sm: '1.8rem' }}>
         <Box className="flex flex-wrap justify-center">
           <Box className="text-left relative w-full" style={{ flex: '0 0 auto' }}>
             <Box className="relative py-[3rem] px-[2rem] bg-[#9CB29E] rounded-[20px]">
-              <Box className="relative w-full text-center mb-[1.25rem]">
-                <Text fz={38} fw={500} c={'white'}>
-                  E-Gift
+              <Box className="relative w-full text-center mb-[0.5rem]">
+                <Text className="font-gallery" fz={34} fw={500} c={'white'}>
+                  Wedding Gift
                 </Text>
               </Box>
-              <Box className="px-[1rem] mb-[1rem]">
+              <Box className="px-[1rem] mb-[1.25rem]">
                 <Text c={'white'} ta={'center'}>
-                  Bapak/Ibu/Saudara sekalian dapat memberikan hadiah digital kepada kami melalui form dibawah. Bagi yang
-                  telah mengisi dan memberikan hadiah kepada kami, kami mengucapkan banyak terimakasih. Semoga hadiah
-                  dari Bapak/Ibu/Saudara dapat bermanfaat bagi kami dalam mengarungi bahtera rumah tangga
+                  Bapak/Ibu/Saudara yang berkenan memberikan tanda kasih dapat melakukannya melalui informasi di bawah.
+                  Kami mengucapkan terima kasih atas doa dan dukungannya. Semoga kebaikan ini membawa berkah bagi kita
+                  semua.
                 </Text>
               </Box>
               <Box className="w-full text-black flex flex-col items-center gap-4">
-                {[1, 2].map((_: any, index: number) => (
+                {LIST_GIFT_PROVIDER.map((item, index: number) => (
                   <Box
                     key={index}
                     className="rounded-[1rem] w-full max-w-[320px] p-[1rem]"
@@ -57,7 +81,7 @@ const GiftSection = () => {
                         'linear-gradient(113deg, rgb(217, 217, 217) 0%, rgb(255, 255, 255) 23%, rgb(229, 229, 229) 31%, rgb(253, 253, 253) 61%, rgb(186, 186, 186) 100%)',
                     }}
                   >
-                    <Box className="mb-2">BANK BRI</Box>
+                    <Box className="mb-2">{item.provider}</Box>
                     <Box className="flex items-center justify-between mb-3">
                       <Box
                         style={{
@@ -140,8 +164,8 @@ const GiftSection = () => {
                       <Box className="w-[90px] h-[50px] rounded-[0.5rem] overflow-hidden bg-white">
                         <Image
                           className="w-full h-full object-cover"
-                          src={'/images/logo-bri-1688609239.jpg'}
-                          alt="logo-bri-1688609239"
+                          src={item.icon}
+                          alt="logo-icon"
                           width={720}
                           height={450}
                         />
@@ -149,11 +173,17 @@ const GiftSection = () => {
                     </Box>
                     <Box className="flex items-center gap-2">
                       <Box fz={18} fw={700}>
-                        630001021959535
+                        {item.target}
                       </Box>
-                      <UnstyledButton className="z-10">Salin</UnstyledButton>
+                      <UnstyledButton
+                        className="z-10 !py-[0.25rem] !px-[0.5rem] !bg-[#4B5B40] !text-white rounded-[4px]"
+                        onClick={() => handleCopyText(item.target)}
+                        fz={12}
+                      >
+                        Salin
+                      </UnstyledButton>
                     </Box>
-                    <Box fz={14}>Eka Yulia Rohmah</Box>
+                    <Box fz={14}>{item.owner}</Box>
                   </Box>
                 ))}
               </Box>
