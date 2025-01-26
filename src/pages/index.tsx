@@ -93,7 +93,7 @@ const HomePage = () => {
           description: 'Tirta dan Fatih - Wedding Invitation',
           images: [
             {
-              url: 'https://undangan-nikah-ku.vercel.app/images/gallery3/berdua_2.webp',
+              url: 'https://undangan-nikah-ku.vercel.app/images/gallery3/berdua_2.webp', // https://undangan-nikah-ku.vercel.app/
             },
           ],
           title: 'Tirta dan Fatih - Wedding Invitation',
