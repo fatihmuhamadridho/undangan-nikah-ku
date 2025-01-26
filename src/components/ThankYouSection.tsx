@@ -104,10 +104,10 @@ const ThankYouSection = () => {
                 <Box className="pt-[125%] relative w-full h-auto">
                   <Image
                     className="absolute top-0 left-0 w-full h-full"
-                    src={'/images/background-2.webp'}
-                    alt="background-2.webp"
-                    width={1439}
-                    height={1080}
+                    src={'/images/gallery3/berdua.webp'}
+                    alt="berdua"
+                    width={1600}
+                    height={1066}
                     style={{
                       objectFit: 'cover',
                       maskImage: "url('/images/mask.png')",

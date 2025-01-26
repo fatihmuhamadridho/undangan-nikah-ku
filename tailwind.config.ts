@@ -14,9 +14,10 @@ export default {
       },
       fontFamily: {
         nunito: ['Nunito Sans', 'sans-serif'],
-        against: ['against'],
-        milyuna: ['milyuna'],
-        gallery: ['gallery', 'serif'],
+        against: ['Against'],
+        milyuna: ['Milyuna'],
+        gallery: ['Gallery', 'serif'],
+        brillion: ['Brillion'],
       },
     },
   },

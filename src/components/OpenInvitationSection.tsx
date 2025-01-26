@@ -45,7 +45,7 @@ const OpenInvitationSection = (props: OpenInvitationSectionProps) => {
             >
               <Text fz={{ base: 14, sm: 16 }}>We invite you to The Wedding of</Text>
               <Text className="font-gallery" fz={{ base: 42, sm: 46 }}>
-                Fatih & Tirta
+                Tirta & Fatih
               </Text>
               <UnstyledButton
                 className="flex items-center justify-center gap-1 rounded-[50px]"

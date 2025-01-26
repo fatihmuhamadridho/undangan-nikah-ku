@@ -1,4 +1,3 @@
-import { DEVELOPMENT_HEADER_IMAGE, PRODUCTION_HEADER_IMAGE } from '@/constants/images';
 import { Box, Text } from '@mantine/core';
 import React from 'react';
 import BranchImage from './Images/BranchImage';
@@ -10,7 +9,7 @@ import Flower4Image from './Images/Flower4Image';
 import PalmImage from './Images/PalmImage';
 
 const HeaderSection = () => {
-  const BACKGROUND_IMAGE = process.env.NODE_ENV === 'development' ? DEVELOPMENT_HEADER_IMAGE : PRODUCTION_HEADER_IMAGE;
+  const BACKGROUND_IMAGE = '/images/gallery3/bg.webp';
 
   return (
     <Box className="fixed inset-0 block overflow-hidden" w={'61%'} h={'100vh'} visibleFrom="md">
@@ -96,13 +95,13 @@ const HeaderSection = () => {
           }}
         >
           <Text className="font-gallery" fz={{ base: 42, sm: 46 }} lh={1.2}>
-            Fatih
+            Tirta
           </Text>
           <Text className="font-gallery" fz={26} lh={1.2}>
             &
           </Text>
           <Text className="font-gallery" fz={{ base: 42, sm: 46 }} lh={1.2}>
-            Tirta
+            Fatih
           </Text>
         </Box>
       </Box>

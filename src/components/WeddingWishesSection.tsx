@@ -86,7 +86,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
             <PineImage />
           </Box>
         </Box>
-        <Box className="container relative">
+        <Box className="container relative mx-auto">
           <Box className="flex flex-wrap justify-center">
             <Box className="z-[3] relative w-full" style={{ flex: '0 0 auto' }}>
               <Box

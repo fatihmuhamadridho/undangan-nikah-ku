@@ -22,3 +22,8 @@
     font-family: Gallery;
     src: url("/fonts/GallerySerif/gallery.otf");
 }
+
+@font-face {
+    font-family: Brillion;
+    src: url("/fonts/Brillion/Theater Brillion DEMO.otf");
+}

@@ -15,8 +15,9 @@ import GiftSection from '@/components/GiftSection';
 import ApologySection from '@/components/ApologySection';
 import ThankYouSection from '@/components/ThankYouSection';
 import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
-import AutoplayAudio from '@/components/AutoplayAudio';
-// import GallerySection from '@/components/GallerySection';
+import dynamic from 'next/dynamic';
+
+const AutoplayAudio = dynamic(() => import('@/components/AutoplayAudio'), { ssr: true });
 
 interface DataListItemProps {
   username?: string;
@@ -26,12 +27,18 @@ interface DataListItemProps {
 
 const HomePage = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [isPlayingAudio, setIsPlayingAudio] = useState<boolean>(false);
   const { data: messageData } = useGetAllMessageSWR();
   const [optimisticMessages, setOptimisticMessages] = useState<DataListItemProps[]>([]);
   const allMessages = [...optimisticMessages, ...(messageData?.data || [])];
 
   const handleOpen = () => {
     setOpen(true);
+    handleToggleAudio(true);
+  };
+
+  const handleToggleAudio = (event: boolean) => {
+    setIsPlayingAudio(event!);
   };
 
   const handleSubmitMessage = async (props: {
@@ -77,9 +84,9 @@ const HomePage = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Fatih dan Tirta - Wedding Invitation</title>
+        <title>Tirta dan Fatih - Wedding Invitation</title>
       </Head>
-      <AutoplayAudio />
+      <AutoplayAudio isPlaying={isPlayingAudio} handleToggleAudio={handleToggleAudio} />
       <motion.div
         style={{
           position: 'absolute',
