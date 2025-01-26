@@ -140,7 +140,10 @@ const ThankYouSection = () => {
                 </Box>
               </Box>
             </Box>
-            <Box className="thank relative py-[3rem] px-[2rem] mb-[5rem] text-black before:absolute before:inset-0 before:bg-white before:rounded-[300px] before:opacity-[0.2] before:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:rounded-[300px] after:opacity-[0.6] after:content-[''] after:shadow-[0_0_1rem_rgba(0,0,0,0)]">
+            <Box
+              className="thank relative py-[3rem] px-[2rem] mb-[5rem] text-black before:absolute before:inset-0 before:bg-white before:rounded-[300px] before:opacity-[0.2] before:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:rounded-[300px] after:opacity-[0.6] after:content-[''] after:shadow-[0_0_1rem_rgba(0,0,0,0)]"
+              py={{ base: '1rem', sm: '3rem' }}
+            >
               <Box className="pt-[2rem]">
                 <Box className="title-section relative w-full text-center mb-[1.25rem]">
                   <Text className="font-gallery" fz={38}>

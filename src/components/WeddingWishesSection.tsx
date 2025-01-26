@@ -102,7 +102,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
               >
                 <Box className="pb-[2rem]" px={{ base: 4, sm: 32 }} style={{ flex: '1 1 auto' }}>
                   <Box className="title-section relative w-full text-center">
-                    <Text className="font-brillion" fz={58}>
+                    <Text className="font-brillion" fz={{ base: 46, sm: 58 }}>
                       Wedding Wishes
                     </Text>
                   </Box>
@@ -199,17 +199,17 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                               className="wish-description p-[1rem] rounded-[5px] relative"
                               style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}
                             >
-                              <Text fz={'1.17rem'} fw={700}>
+                              <Text fz={{ base: 16, sm: '1.17rem' }} fw={600}>
                                 {item?.username}
                               </Text>
-                              <Text>{item?.message}</Text>
+                              <Text fz={{ base: 14, sm: 16 }}>{item?.message}</Text>
                               <Box className="flex items-center gap-2">
-                                <Text fz={12} c={'#6c757d'}>
+                                <Text fz={{ base: 11, sm: 12 }} c={'#6c757d'}>
                                   {moment(item?.createdAt).from(currentTime)} at{' '}
                                   {moment(item?.createdAt).format('HH:mm')}
                                 </Text>
                                 {item?.sending && (
-                                  <Text fz={12} c={'#6c757d'}>
+                                  <Text fz={{ base: 11, sm: 12 }} c={'#6c757d'}>
                                     Sending...
                                   </Text>
                                 )}

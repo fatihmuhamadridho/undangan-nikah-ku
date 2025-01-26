@@ -55,7 +55,7 @@ const GiftSection = () => {
           <Flower1Image />
         </Box>
       </Box>
-      <Box className="container px-[1.8rem] mx-auto">
+      <Box className="container mx-auto" px={{ base: '1rem', sm: '1.8rem' }}>
         <Box className="flex flex-wrap justify-center">
           <Box className="text-left relative w-full" style={{ flex: '0 0 auto' }}>
             <Box className="relative py-[3rem] px-[2rem] bg-[#9CB29E] rounded-[20px]">

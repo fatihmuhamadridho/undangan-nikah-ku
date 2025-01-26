@@ -33,7 +33,7 @@ const LocationSection = () => {
               </Box>
             </Box>
           </Box>
-          <Box className="container px-[1.8rem] relative mx-auto">
+          <Box className="container relative mx-auto" px={{ base: 16, sm: '1.8rem' }}>
             <Box className="flex flex-wrap justify-center">
               <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
                 <Box className="relative text-center px-[1.5rem] mb-[3rem]">
@@ -59,7 +59,7 @@ const LocationSection = () => {
             </Box>
           </Box>
           <Box className="venue-content relative">
-            <Box className="px-[1.8rem]">
+            <Box className="px-[1.8rem]" px={{ base: 16, sm: '1.8rem' }}>
               <Box className="flex flex-wrap justify-center gap-[3rem]">
                 <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
                   <Box
@@ -162,7 +162,7 @@ const LocationSection = () => {
                           style={{ transform: 'translate(-50%, -50%)' }}
                         >
                           <Box className="relative">
-                            <Text className="font-gallery !pb-[1rem] !mb-[0.5rem]" fz={32}>
+                            <Text className="font-gallery !pb-[1rem] !mb-[0.5rem]" fz={{ base: 28, sm: 32 }}>
                               Acara Pernikahan
                             </Text>
                             <Text fz={18}>Minggu,</Text>
@@ -205,13 +205,13 @@ const LocationSection = () => {
                           <Box className="relative my-[1rem] w-max mx-auto">
                             <IconMapPin className="justify-self-center" size={40} />
                           </Box>
-                          <Text className="!pb-[1rem]" fz={24}>
+                          <Text className="!pb-[1rem]" fz={{ base: 20, sm: 24 }} fw={500}>
                             Kediaman Mempelai Wanita
                           </Text>
                           <Box>
                             <Text fz={16}>Jalan Hj Kiong No.58, RT.2/RW.5, Pinang, Kota Tangerang Banten</Text>
                           </Box>
-                          <Box className="relative w-full mt-[1rem]">
+                          <Box className="relative w-full" mt={{ base: 32, sm: 24 }}>
                             <UnstyledButton
                               className="!bg-[#4B5B40] !text-white !py-[0.65rem] !px-[2rem] mx-auto rounded-[50px]"
                               fz={16}
