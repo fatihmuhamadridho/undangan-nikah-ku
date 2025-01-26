@@ -95,13 +95,13 @@ const HeaderSection = () => {
             color: 'white',
           }}
         >
-          <Text fz={46} lh={1.2}>
+          <Text className="font-gallery" fz={{ base: 42, sm: 46 }} lh={1.2}>
             Fatih
           </Text>
-          <Text fz={26} lh={1.2}>
+          <Text className="font-gallery" fz={26} lh={1.2}>
             &
           </Text>
-          <Text fz={46} lh={1.2}>
+          <Text className="font-gallery" fz={{ base: 42, sm: 46 }} lh={1.2}>
             Tirta
           </Text>
         </Box>

@@ -1,11 +1,12 @@
 import { Box, Text, Textarea, TextInput, UnstyledButton } from '@mantine/core';
-import React, { startTransition, useOptimistic } from 'react';
+import React, { startTransition, useEffect, useOptimistic, useState } from 'react';
 import Flower1Image from './Images/Flower1Image';
 import Flower3Image from './Images/Flower3Image';
 import PalmImage from './Images/PalmImage';
 import PineImage from './Images/PineImage';
 import BgImage from './Images/BgImage';
 import { Form, Formik } from 'formik';
+import moment from 'moment';
 
 interface DataListItemProps {
   username?: string;
@@ -28,10 +29,19 @@ interface WeddingWishesSectionProps {
 
 const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
   const { dataList = [], OnSubmit = () => {} } = props;
+  const [currentTime, setCurrentTime] = useState(moment());
   const [optimisticMessages, addOptimisticMessage] = useOptimistic<DataListItemProps[], DataListItemProps>(
     dataList,
     (state, newMessage) => [newMessage, ...state],
   );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(moment());
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleOptimisticSubmit = async (values: {
     username: string;
@@ -111,6 +121,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                           <Textarea
                             label="Write your wishes"
                             onChange={handleChange}
+                            maxLength={300}
                             name="message"
                             value={values.message}
                           />
@@ -173,7 +184,8 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                               <Text>{item?.message}</Text>
                               <Box className="flex items-center gap-2">
                                 <Text fz={12} c={'#6c757d'}>
-                                  10 months ago at 13:27
+                                  {moment(item?.createdAt).from(currentTime)} at{' '}
+                                  {moment(item?.createdAt).format('HH:mm')}
                                 </Text>
                                 {item?.sending && (
                                   <Text fz={12} c={'#6c757d'}>
