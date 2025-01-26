@@ -7,6 +7,7 @@ import PineImage from './Images/PineImage';
 import BgImage from './Images/BgImage';
 import { Form, Formik } from 'formik';
 import moment from 'moment';
+import { motion, Variants } from 'framer-motion';
 
 interface DataListItemProps {
   username?: string;
@@ -34,6 +35,17 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
     dataList,
     (state, newMessage) => [newMessage, ...state],
   );
+  const rotateAnimation: Variants = {
+    animate: {
+      rotate: [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      },
+    },
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,13 +80,29 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
       <Box className="wishes-wrapper-form relative pt-[3rem]">
         <Box className="ornaments-wrapper absolute inset-0">
           <Box className="orn-1 absolute top-0 left-0 w-[30%]" style={{ transform: 'translate(-50%, 0px)' }}>
-            <Flower1Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower1Image />
+            </motion.div>
           </Box>
           <Box
             className="orn-2 absolute top-[1rem] right-0 w-[25%]"
             style={{ transform: 'translate(50%, 0) rotate(-30deg) scaleX(-1)' }}
           >
-            <Flower3Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower3Image />
+            </motion.div>
           </Box>
           <Box className="orn-3 absolute bottom-0 left-0 w-[30%]" style={{ transform: 'translate(-60%, 10%)' }}>
             <PalmImage />
@@ -127,6 +155,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                             label="Name"
                             onChange={handleChange}
                             name="username"
+                            maxLength={100}
                             onBlur={() => document.getElementsByName('message')[0]?.focus()}
                             onKeyPress={(e) => {
                               if (e.key === 'Enter') {
@@ -142,10 +171,12 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                             onChange={handleChange}
                             maxLength={300}
                             name="message"
+                            autosize={true}
+                            minRows={2}
                             value={values.message}
                           />
                           <UnstyledButton
-                            className="!bg-[#4B5B40] !py-[0.65rem] !px-[2rem] !text-white rounded-[50px] mx-auto w-full !font-[400] !text-center align-middle !text-[1rem]"
+                            className="!bg-secondary !py-[0.65rem] !px-[2rem] !text-white rounded-[50px] mx-auto w-full !font-[400] !text-center align-middle !text-[1rem]"
                             type="submit"
                           >
                             Send
@@ -160,7 +191,7 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
           </Box>
         </Box>
       </Box>
-      <Box className="wishes-preview relative bg-[#9CB29E]">
+      <Box className="wishes-preview relative !bg-primary">
         <Box className="ornaments-wrapper absolute inset-0">
           <Box className="absolute bottom-0 left-1/2 w-full h-full" style={{ transform: 'translate(-50%, 0)' }}>
             <Box className="h-full">
@@ -202,7 +233,9 @@ const WeddingWishesSection = (props: WeddingWishesSectionProps) => {
                               <Text fz={{ base: 16, sm: '1.17rem' }} fw={600}>
                                 {item?.username}
                               </Text>
-                              <Text fz={{ base: 14, sm: 16 }}>{item?.message}</Text>
+                              <Text className="text-wrap whitespace-pre-line" fz={{ base: 14, sm: 16 }}>
+                                {item?.message}
+                              </Text>
                               <Box className="flex items-center gap-2">
                                 <Text fz={{ base: 11, sm: 12 }} c={'#6c757d'}>
                                   {moment(item?.createdAt).from(currentTime)} at{' '}

@@ -12,8 +12,21 @@ import Flower3Image from './Images/Flower3Image';
 import Flower4Image from './Images/Flower4Image';
 import Image from 'next/image';
 import UnionImage from './Images/UnionImage';
+import { motion, Variants } from 'framer-motion';
 
 const ThankYouSection = () => {
+  const rotateAnimation: Variants = {
+    animate: {
+      rotate: [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      },
+    },
+  };
+
   return (
     <Box className="relative py-[3rem] text-center overflow-hidden">
       <Box className="ornaments-wrapper absolute inset-0">
@@ -43,18 +56,50 @@ const ThankYouSection = () => {
           <TreeImage />
         </Box>
         <Box className="orn-3 absolute top-[2rem] left-0 w-[30%]" style={{ transform: 'translate(-50%, 0)' }}>
-          <Flower2Image />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower2Image />
+          </motion.div>
           <Box className="absolute top-[40%] right-[5%] w-full">
-            <Flower1Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower1Image />
+            </motion.div>
           </Box>
         </Box>
         <Box
           className="orn-5 absolute top-[2rem] right-0 w-[30%]"
           style={{ transform: 'translate(50%, 0) rotate(-30deg)' }}
         >
-          <Flower2Image />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower2Image />
+          </motion.div>
           <Box className="absolute top-1/2 left-[-30%] w-full">
-            <Flower1Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower1Image />
+            </motion.div>
           </Box>
         </Box>
         <Box className="orn-7 absolute bottom-0 left-[1rem] w-[40%]" style={{ transform: 'translate(-40%, 0)' }}>
@@ -65,13 +110,45 @@ const ThankYouSection = () => {
         </Box>
         <Box className="orn-9 absolute bottom-0 left-0 w-[30%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="orn-10 absolute bottom-[60%] right-1/4 w-[80%]">
-            <Flower2Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower2Image />
+            </motion.div>
           </Box>
-          <Flower1Image />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower1Image />
+          </motion.div>
           <Box className="orn-11 absolute top-1/4 left-[60%] w-[80%]">
-            <Flower3Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower3Image />
+            </motion.div>
             <Box className="absolute top-[10%] left-1/2 w-full">
-              <Flower4Image />
+              <motion.div
+                style={{
+                  transformOrigin: 'bottom center',
+                }}
+                variants={rotateAnimation}
+                animate="animate"
+              >
+                <Flower4Image />
+              </motion.div>
             </Box>
           </Box>
         </Box>
@@ -85,21 +162,53 @@ const ThankYouSection = () => {
         </Box>
         <Box className="absolute bottom-0 left-0 w-[30%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="absolute bottom-[60%] right-1/4 w-[80%]">
-            <Flower3Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower3Image />
+            </motion.div>
           </Box>
-          <Flower1Image />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower1Image />
+          </motion.div>
           <Box className="absolute top-1/4 left-[60%] w-[80%]">
-            <Flower3Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower3Image />
+            </motion.div>
             <Box className="absolute top-[10%] left-1/2 w-full">
-              <Flower4Image />
+              <motion.div
+                style={{
+                  transformOrigin: 'bottom center',
+                }}
+                variants={rotateAnimation}
+                animate="animate"
+              >
+                <Flower4Image />
+              </motion.div>
             </Box>
           </Box>
         </Box>
       </Box>
-      <Box className="container relative px-[1.8rem] mx-auto">
+      <Box className="container relative  mx-auto" px={{ base: '0rem', sm: '1.8rem' }}>
         <Box className="relative w-full" style={{ flex: '0 0 auto' }}>
           <Box>
-            <Box className="relative w-[80%] mx-auto">
+            <Box className="relative w-[80%] mx-auto" w={{ base: '85%', sm: '80%' }}>
               <Box className="relative w-full h-auto">
                 <Box className="pt-[125%] relative w-full h-auto">
                   <Image

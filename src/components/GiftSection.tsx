@@ -4,8 +4,20 @@ import PalmImage from './Images/PalmImage';
 import Flower3Image from './Images/Flower3Image';
 import Flower1Image from './Images/Flower1Image';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 const GiftSection = () => {
+  const rotateAnimation: Variants = {
+    animate: {
+      rotate: [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      },
+    },
+  };
   const LIST_GIFT_PROVIDER = [
     {
       provider: 'BANK BCA',
@@ -46,19 +58,35 @@ const GiftSection = () => {
           className="orn-3 absolute top-[3rem] left-0 w-[30%]"
           style={{ transform: 'translate(-50%, 0) rotate(20deg)' }}
         >
-          <Flower3Image />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower3Image />
+          </motion.div>
         </Box>
         <Box
           className="orn-4 absolute top-[3rem] right-0 w-[35%]"
           style={{ transform: 'translate(55%, 0) scaleX(-1)' }}
         >
-          <Flower1Image />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower1Image />
+          </motion.div>
         </Box>
       </Box>
       <Box className="container mx-auto" px={{ base: '1rem', sm: '1.8rem' }}>
         <Box className="flex flex-wrap justify-center">
           <Box className="text-left relative w-full" style={{ flex: '0 0 auto' }}>
-            <Box className="relative py-[3rem] px-[2rem] bg-[#9CB29E] rounded-[20px]">
+            <Box className="relative py-[3rem] px-[2rem] !bg-primary rounded-[20px]">
               <Box className="relative w-full text-center mb-[0.5rem]">
                 <Text className="font-gallery" fz={34} fw={500} c={'white'}>
                   Wedding Gift
@@ -161,7 +189,7 @@ const GiftSection = () => {
                           }}
                         />
                       </Box>
-                      <Box className="w-[90px] h-[50px] rounded-[0.5rem] overflow-hidden bg-white">
+                      <Box className="w-[90px] h-[50px] rounded-[0.5rem] overflow-hidden !bg-white">
                         <Image
                           className="w-full h-full object-cover"
                           src={item.icon}
@@ -176,7 +204,7 @@ const GiftSection = () => {
                         {item.target}
                       </Box>
                       <UnstyledButton
-                        className="z-10 !py-[0.25rem] !px-[0.5rem] !bg-[#4B5B40] !text-white rounded-[4px]"
+                        className="z-10 !py-[0.25rem] !px-[0.5rem] !bg-secondary !text-white rounded-[4px]"
                         onClick={() => handleCopyText(item.target)}
                         fz={12}
                       >

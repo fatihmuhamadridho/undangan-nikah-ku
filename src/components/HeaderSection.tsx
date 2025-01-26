@@ -7,9 +7,21 @@ import PineImage from './Images/PineImage';
 import Flower3Image from './Images/Flower3Image';
 import Flower4Image from './Images/Flower4Image';
 import PalmImage from './Images/PalmImage';
+import { motion, Variants } from 'framer-motion';
 
 const HeaderSection = () => {
   const BACKGROUND_IMAGE = '/images/gallery3/bg.webp';
+  const rotateAnimation: Variants = {
+    animate: {
+      rotate: [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      },
+    },
+  };
 
   return (
     <Box className="fixed inset-0 block overflow-hidden" w={'61%'} h={'100vh'} visibleFrom="md">
@@ -27,9 +39,25 @@ const HeaderSection = () => {
           <BranchImage className="relative w-full h-auto" />
         </Box>
         <Box className="absolute top-8 left-0 w-[20%]" style={{ transform: 'translate(-50%, 0)' }}>
-          <Flower2Image className="relative w-full h-auto" />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower2Image className="relative w-full h-auto" />
+          </motion.div>
           <Box className="absolute top-[40%] right-[5%] w-full">
-            <Flower1Image className="relative w-full h-auto" />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower1Image className="relative w-full h-auto" />
+            </motion.div>
           </Box>
         </Box>
 
@@ -38,9 +66,25 @@ const HeaderSection = () => {
           <BranchImage className="relative w-full h-auto" />
         </Box>
         <Box className="absolute top-8 right-0 w-[20%]" style={{ transform: 'translate(50%, 0) rotate(-30deg)' }}>
-          <Flower2Image className="relative w-full h-auto" />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower2Image className="relative w-full h-auto" />
+          </motion.div>
           <Box className="absolute top-[50%] -left-[30%] w-full">
-            <Flower1Image className="relative w-full h-auto" />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower1Image className="relative w-full h-auto" />
+            </motion.div>
           </Box>
         </Box>
 
@@ -53,13 +97,45 @@ const HeaderSection = () => {
         </Box>
         <Box className="absolute bottom-0 left-0 w-[23%]" style={{ transform: 'translate(-30%, 40%)' }}>
           <Box className="absolute bottom-[60%] right-[25%] w-[80%]">
-            <Flower2Image className="relative w-full h-auto" />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower2Image className="relative w-full h-auto" />
+            </motion.div>
           </Box>
-          <Flower1Image className="relative w-full h-auto" />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower1Image className="relative w-full h-auto" />
+          </motion.div>
           <Box className="absolute top-[25%] left-[60%] w-[80%]">
-            <Flower3Image className="relative w-full h-auto" />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower3Image className="relative w-full h-auto" />
+            </motion.div>
             <Box className="absolute top-[10%] left-[50%] w-full">
-              <Flower4Image className="relative w-full h-auto" />
+              <motion.div
+                style={{
+                  transformOrigin: 'bottom center',
+                }}
+                variants={rotateAnimation}
+                animate="animate"
+              >
+                <Flower4Image className="relative w-full h-auto" />
+              </motion.div>
             </Box>
           </Box>
         </Box>
@@ -73,13 +149,45 @@ const HeaderSection = () => {
         </Box>
         <Box className="absolute bottom-0 right-0 w-[23%]" style={{ transform: 'translate(30%, 40%) scaleX(-1)' }}>
           <Box className="absolute bottom-[60%] right-[25%] w-[80%]">
-            <Flower2Image className="relative w-full h-auto" />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower2Image className="relative w-full h-auto" />
+            </motion.div>
           </Box>
-          <Flower1Image className="relative w-full h-auto" />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <Flower1Image className="relative w-full h-auto" />
+          </motion.div>
           <Box className="absolute top-[25%] left-[60%] w-[80%]">
-            <Flower3Image className="relative w-full h-auto" />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower3Image className="relative w-full h-auto" />
+            </motion.div>
             <Box className="absolute top-[10%] left-[50%] w-full">
-              <Flower4Image className="relative w-full h-auto" />
+              <motion.div
+                style={{
+                  transformOrigin: 'bottom center',
+                }}
+                variants={rotateAnimation}
+                animate="animate"
+              >
+                <Flower4Image className="relative w-full h-auto" />
+              </motion.div>
             </Box>
           </Box>
         </Box>

@@ -5,8 +5,21 @@ import BranchImage from './Images/BranchImage';
 import Flower4Image from './Images/Flower4Image';
 import Flower1Image from './Images/Flower1Image';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 const OurStorySection = () => {
+  const rotateAnimation: Variants = {
+    animate: {
+      rotate: [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'loop',
+        ease: 'linear',
+      },
+    },
+  };
+
   return (
     <Box className="relative py-[3rem] overflow-hidden">
       <Box className="ornaments-wrapper">
@@ -19,15 +32,47 @@ const OurStorySection = () => {
           className="orn-1 absolute top-0 left-0 w-[35%]"
           style={{ transform: 'translate(-60%, 0) rotate(20deg) scaleX(-1)' }}
         >
-          <BranchImage />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <BranchImage />
+          </motion.div>
           <Box className="orn-2 absolute top-[60%] left-[-25%] w-[80%]" style={{ transform: 'rotate(10deg)' }}>
-            <Flower4Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower4Image />
+            </motion.div>
           </Box>
         </Box>
         <Box className="orn-3 absolute top-0 right-0 w-[35%]" style={{ transform: 'translate(60%, 0) rotate(-20deg)' }}>
-          <BranchImage />
+          <motion.div
+            style={{
+              transformOrigin: 'bottom center',
+            }}
+            variants={rotateAnimation}
+            animate="animate"
+          >
+            <BranchImage />
+          </motion.div>
           <Box className="orn-4 absolute top-[60%] left-[-15%] w-[80%]" style={{ transform: 'rotate(-20deg)' }}>
-            <Flower1Image />
+            <motion.div
+              style={{
+                transformOrigin: 'bottom center',
+              }}
+              variants={rotateAnimation}
+              animate="animate"
+            >
+              <Flower1Image />
+            </motion.div>
           </Box>
         </Box>
       </Box>
