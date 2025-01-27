@@ -140,7 +140,6 @@ const HomePage = () => {
           <WelcomeSection />
           <SaveDateSection />
           <OurStorySection />
-          {/* <GallerySection /> */}
           <LocationSection />
           <WeddingWishesSection dataList={allMessages} OnSubmit={handleSubmitMessage} />
           <GiftSection />
