@@ -1,11 +1,13 @@
 import '@/styles/globals.css';
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 import type { AppProps } from 'next/app';
 import { createTheme, MantineProvider } from '@mantine/core';
 import { SWRConfig } from 'swr';
 import { fetcher } from '@/utils/fetcher';
 import React from 'react';
 import Script from 'next/script';
+import { Notifications } from '@mantine/notifications';
 
 const theme = createTheme({});
 
@@ -28,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
       )}
       <SWRConfig value={{ fallback: pageProps.fallback || {}, revalidateOnFocus: false, fetcher: fetcher }}>
         <MantineProvider theme={theme}>
+          <Notifications />
           <Component {...pageProps} />
         </MantineProvider>
       </SWRConfig>
