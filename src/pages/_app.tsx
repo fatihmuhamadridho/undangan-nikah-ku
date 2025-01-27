@@ -12,7 +12,7 @@ const theme = createTheme({});
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV === 'production' && (
         <React.Fragment>
           <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ8RGTV9KD" />
           <Script id="google-analytic">
