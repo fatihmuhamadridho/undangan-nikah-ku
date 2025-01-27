@@ -3,17 +3,23 @@ import { CreateMessageUsecase, GetAllMessageUsecase } from '@/@core/domain/useca
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { CreateMessageDTO, FindManyMessageDTO, MessageResp } from '@/@core/domain/entities/Message';
 import { ResponseProps } from '@/@core/domain/entities/Global';
+import { RateLimiter } from '../../@utils/rateLimiter';
 
 const prismaMessageAdapter = new PrismaMessageAdapter();
 const getAllMessageUsecase = new GetAllMessageUsecase(prismaMessageAdapter);
 const createMessageUsecase = new CreateMessageUsecase(prismaMessageAdapter);
 
+const getAllMessageUsecaseRateLimiter = new RateLimiter({ maxRequestsPerMinute: 100 });
+const createMessageUsecaseRateLimiter = new RateLimiter({ maxRequestsPerMinute: 5 });
+
 export async function NextMessage(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'POST':
-      POSTNextMessage(req, res);
+      createMessageUsecaseRateLimiter.apply(POSTNextMessage)(req, res);
+      break;
     default:
-      GETNextMessage(req, res);
+      getAllMessageUsecaseRateLimiter.apply(GETNextMessage)(req, res);
+      break;
   }
 }
 

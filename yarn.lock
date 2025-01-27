@@ -364,6 +364,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+  version: 7.26.7
+  resolution: "@babel/runtime@npm:7.26.7"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/60199c049f90e5e41c687687430052a370aca60bac7859ff4ee761c5c1739b8ba1604d391d01588c22dc0e93828cbadb8ada742578ad1b1df240746bce98729a
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.25.9, @babel/template@npm:^7.3.3":
   version: 7.25.9
   resolution: "@babel/template@npm:7.25.9"
@@ -1117,6 +1126,30 @@ __metadata:
   peerDependencies:
     react: ^18.x || ^19.x
   checksum: 10c0/8bb13434952c045f0c0b4871d5985fa446cd769f2823327bfdf04d95977c6640c81d5ab584c9506bd5ad413e1aa8ec88c637dec35095bfcb71c51f3daf129887
+  languageName: node
+  linkType: hard
+
+"@mantine/notifications@npm:^7.16.2":
+  version: 7.16.2
+  resolution: "@mantine/notifications@npm:7.16.2"
+  dependencies:
+    "@mantine/store": "npm:7.16.2"
+    react-transition-group: "npm:4.4.5"
+  peerDependencies:
+    "@mantine/core": 7.16.2
+    "@mantine/hooks": 7.16.2
+    react: ^18.x || ^19.x
+    react-dom: ^18.x || ^19.x
+  checksum: 10c0/aecd3b5984742b2c2e83b932daedbed4fac9600b7a33d7b29b4ef0d67e6f14045e4d57f1c7ba91382bcb6667356ddbd19720fc288431c283e2b2a60b53acc337
+  languageName: node
+  linkType: hard
+
+"@mantine/store@npm:7.16.2":
+  version: 7.16.2
+  resolution: "@mantine/store@npm:7.16.2"
+  peerDependencies:
+    react: ^18.x || ^19.x
+  checksum: 10c0/fb61118ed7b7805f85de824a92cde54f476df7e365fad7af10851585af1eb026666850b069c4dd7b11c5ef970a5e635e59c9b9273c1bdf879c00e08edb4e6fad
   languageName: node
   linkType: hard
 
@@ -3004,6 +3037,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-helpers@npm:^5.0.1":
+  version: 5.2.1
+  resolution: "dom-helpers@npm:5.2.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.8.7"
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/f735074d66dd759b36b158fa26e9d00c9388ee0e8c9b16af941c38f014a37fc80782de83afefd621681b19ac0501034b4f1c4a3bff5caa1b8667f0212b5e124c
+  languageName: node
+  linkType: hard
+
 "domexception@npm:^4.0.0":
   version: 4.0.0
   resolution: "domexception@npm:4.0.0"
@@ -3610,6 +3653,15 @@ __metadata:
   version: 3.1.1
   resolution: "exponential-backoff@npm:3.1.1"
   checksum: 10c0/160456d2d647e6019640bd07111634d8c353038d9fa40176afb7cd49b0548bdae83b56d05e907c2cce2300b81cae35d800ef92fefb9d0208e190fa3b7d6bb579
+  languageName: node
+  linkType: hard
+
+"express-rate-limit@npm:^7.5.0":
+  version: 7.5.0
+  resolution: "express-rate-limit@npm:7.5.0"
+  peerDependencies:
+    express: ^4.11 || 5 || ^5.0.0-beta.1
+  checksum: 10c0/3e96afa05b4f577395688ede37e0cb19901f20c350b32575fb076f3d25176209fb88d3648151755c232aaf304147c58531f070757978f376e2f08326449299fd
   languageName: node
   linkType: hard
 
@@ -6360,7 +6412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -6518,6 +6570,21 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10c0/652d290d316c55a253507ecf65ca27f2162801dace10c715f2241203e81d82e9de6d282095b758b26c6bc9e1af9ca552cab5c3a361b230e5fcf25bec31e1bd25
+  languageName: node
+  linkType: hard
+
+"react-transition-group@npm:4.4.5":
+  version: 4.4.5
+  resolution: "react-transition-group@npm:4.4.5"
+  dependencies:
+    "@babel/runtime": "npm:^7.5.5"
+    dom-helpers: "npm:^5.0.1"
+    loose-envify: "npm:^1.4.0"
+    prop-types: "npm:^15.6.2"
+  peerDependencies:
+    react: ">=16.6.0"
+    react-dom: ">=16.6.0"
+  checksum: 10c0/2ba754ba748faefa15f87c96dfa700d5525054a0141de8c75763aae6734af0740e77e11261a1e8f4ffc08fd9ab78510122e05c21c2d79066c38bb6861a886c82
   languageName: node
   linkType: hard
 
@@ -7720,6 +7787,7 @@ __metadata:
     "@eslint/eslintrc": "npm:^3"
     "@mantine/core": "npm:^7.15.2"
     "@mantine/hooks": "npm:^7.15.2"
+    "@mantine/notifications": "npm:^7.16.2"
     "@prisma/client": "npm:^6.1.0"
     "@tabler/icons-react": "npm:^3.22.0"
     "@testing-library/dom": "npm:^10.4.0"
@@ -7731,6 +7799,7 @@ __metadata:
     "@types/react-dom": "npm:^19"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.1.2"
+    express-rate-limit: "npm:^7.5.0"
     formik: "npm:^2.4.6"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"

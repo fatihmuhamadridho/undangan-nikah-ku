@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ScrollArea } from '@mantine/core';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -17,6 +18,7 @@ import ThankYouSection from '@/components/ThankYouSection';
 import { createMessageSWR, useGetAllMessageSWR } from '@/@core/infra/clients/swr/useGetAllMessageSWR.client';
 import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
+import { notifications } from '@mantine/notifications';
 
 const AutoplayAudio = dynamic(() => import('@/components/AutoplayAudio'), { ssr: true });
 
@@ -60,13 +62,22 @@ const HomePage = () => {
       ...prevMessages,
     ]);
     try {
-      await createMessageSWR({ username: props.username, message: props.message });
-      setOptimisticMessages((prevMessages) =>
-        prevMessages.map((msg) =>
-          msg.username === props.username && msg.message === props.message ? { ...msg, sending: false } : msg,
-        ),
-      );
-    } catch (error) {
+      const response = await createMessageSWR({ username: props.username, message: props.message });
+      if (response.status) {
+        notifications.show({ title: 'Message', message: response?.message, color: 'blue' });
+        setOptimisticMessages((prevMessages) =>
+          prevMessages.map((msg) =>
+            msg.username === props.username && msg.message === props.message ? { ...msg, sending: false } : msg,
+          ),
+        );
+      } else {
+        notifications.show({ title: 'Message', message: response?.message, color: 'red' });
+        setOptimisticMessages((prevMessages) =>
+          prevMessages.filter((msg) => !(msg.username === props.username && msg.message === props.message)),
+        );
+      }
+    } catch (error: any) {
+      notifications.show({ title: 'test', message: error });
       console.error('Error submitting message:', error);
     }
   };

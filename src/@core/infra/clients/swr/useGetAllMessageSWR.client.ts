@@ -2,7 +2,8 @@
 import { CreateMessageUsecase, GetAllMessageUsecase } from '@/@core/domain/usecases/message/Message.usecase';
 import useSWR from 'swr';
 import { HttpMessageAdapter } from '../../adapters/http/HttpMessage.adapter';
-import { CreateMessageDTO } from '@/@core/domain/entities/Message';
+import { CreateMessageDTO, MessageResp } from '@/@core/domain/entities/Message';
+import { PromiseResponseProps } from '@/@core/domain/entities/Global';
 
 const httpMessageAdapter = new HttpMessageAdapter();
 const getAllMessageUsecase = new GetAllMessageUsecase(httpMessageAdapter);
@@ -14,7 +15,7 @@ export const useGetAllMessageSWR = () => {
   return { data, error, isLoading };
 };
 
-export const createMessageSWR = async (payload: CreateMessageDTO['payload']) => {
+export const createMessageSWR = async (payload: CreateMessageDTO['payload']): PromiseResponseProps<MessageResp> => {
   try {
     const response = await createMessageUsecase.execute({ payload: payload });
     // mutate('/messages');
