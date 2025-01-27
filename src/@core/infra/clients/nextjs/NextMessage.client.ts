@@ -16,8 +16,10 @@ export async function NextMessage(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case 'POST':
       createMessageUsecaseRateLimiter.apply(POSTNextMessage)(req, res);
+      break;
     default:
       getAllMessageUsecaseRateLimiter.apply(GETNextMessage)(req, res);
+      break;
   }
 }
 
