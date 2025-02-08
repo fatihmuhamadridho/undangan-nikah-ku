@@ -30,7 +30,7 @@ const GiftSection = () => {
     },
     {
       provider: 'BANK PERMATA',
-      target: '009931536394',
+      target: '9931536394',
       owner: 'Fatih Muhamad Ridho',
       icon: '/images/logo-permata.png',
     },
