@@ -171,25 +171,25 @@ const SaveDateSection = () => {
                 <Box className="countdown flex text-center justify-center relative min-w-[80%] w-fit gap-[1.5rem] mx-auto">
                   <Box className="flex flex-col justify-center items-center relative">
                     <Text className="font-gallery" fz={36}>
-                      {timeLeft.days}
+                      {timeLeft.days > 0 ? timeLeft.days : 0}
                     </Text>
                     <Text fz={14}>Days</Text>
                   </Box>
                   <Box className="flex flex-col justify-center items-center relative">
                     <Text className="font-gallery" fz={36}>
-                      {timeLeft.hours}
+                      {timeLeft.hours > 0 ? timeLeft.hours : 0}
                     </Text>
                     <Text fz={14}>Hours</Text>
                   </Box>
                   <Box className="flex flex-col justify-center items-center relative">
                     <Text className="font-gallery" fz={36}>
-                      {timeLeft.minutes}
+                      {timeLeft.minutes > 0 ? timeLeft.minutes : 0}
                     </Text>
                     <Text fz={14}>Minutes</Text>
                   </Box>
                   <Box className="flex flex-col justify-center items-center relative">
                     <Text className="font-gallery" fz={36}>
-                      {timeLeft.seconds}
+                      {timeLeft.seconds > 0 ? timeLeft.seconds : 0}
                     </Text>
                     <Text fz={14}>Seconds</Text>
                   </Box>
